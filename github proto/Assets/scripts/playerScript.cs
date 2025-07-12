@@ -17,7 +17,12 @@ public class playerScript : MonoBehaviour
         mouseScreenPos = Mouse.current.position.ReadValue();
         mouseScreenPos.z = Camera.main.nearClipPlane + 1;
         transform.position = Camera.main.ScreenToWorldPoint(mouseScreenPos);
-        
+        if (transform.position.x > 6.5) transform.position = new Vector3(6.5f, transform.position.y, transform.position.z);
+        else if (transform.position.x < -6.5) transform.position = new Vector3(-6.5f, transform.position.y, transform.position.z);
+        if (transform.position.y > 4.7) transform.position = new Vector3(transform.position.x, 4.7f, transform.position.z);
+        else if (transform.position.y < -4.7) transform.position = new Vector3(transform.position.x, -4.7f, transform.position.z);
+
+
         //if (Input.GetKey(KeyCode.W))
         //{
         //    rb.linearVelocityY = 5f;
