@@ -9,10 +9,14 @@ public class controlScript : MonoBehaviour
 
     public void moveRight()
     {
-        camera_.transform.DOMoveX(25, 1, true);
+        camera_.transform.position = new Vector3(25, 0, -10);
+        transform.position = new Vector3(25, transform.position.y, transform.position.z);
+        canGo = "left";
     }
     public void moveLeft()
     {
-        camera_.transform.position = new Vector3(0, transform.position.y, transform.position.z);
+        camera_.transform.position = new Vector3(0, 0, -10);
+        transform.position = new Vector3(0, transform.position.y, transform.position.z);
+        canGo = "right";
     }
 }
