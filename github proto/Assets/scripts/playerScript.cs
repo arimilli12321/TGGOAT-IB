@@ -52,6 +52,10 @@ public class playerScript : MonoBehaviour
             {
                 Destroy(gameObj);
             }
+            foreach (GameObject gameObj in GameObject.FindGameObjectsWithTag("enemy"))
+            {
+                Destroy(gameObj);
+            }
             loseText.SetActive(true);
             loseButton.SetActive(true);
             gameObject.SetActive(false);
