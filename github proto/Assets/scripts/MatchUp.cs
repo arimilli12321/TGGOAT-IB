@@ -1,11 +1,13 @@
 using System.Collections.Generic;
+using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class MatchUp : MonoBehaviour
 {
     public List<float> wires = new List<float>();
-
+    [SerializeField] public List<GameObject> mission = new List<GameObject>();
+    GameObject rand;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,7 +22,11 @@ public class MatchUp : MonoBehaviour
         {
             Debug.Log(i);
         }
-
+        foreach (GameObject i in mission)
+        {
+            rand = mission[Random.Range(0, mission.Count)];
+            rand.transform.position = new Vector3(wires[Random.Range(0, wires.Count)], -3, 1);
+        }
     }
 
     // Update is called once per frame
