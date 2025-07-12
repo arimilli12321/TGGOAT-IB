@@ -17,11 +17,9 @@ public class circleScript : MonoBehaviour
 
     void OnMouseOver()
     {
-        Debug.Log("gg");
         if (Input.GetMouseButtonDown(0))
         {
             GameObject.Find("Incorrect").GetComponent<SpriteRenderer>().color = green2;
-            Debug.Log("ff");
         }
     }
 }
