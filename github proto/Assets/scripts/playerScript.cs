@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 public class playerScript : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Vector3 mouseScreenPos;
     [SerializeField] private GameObject loseText, loseButton;
     void Start()
     {
@@ -12,25 +14,34 @@ public class playerScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            rb.linearVelocityY = 5f;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            rb.linearVelocityY = -5f;
-        }
-        else rb.linearVelocityY = 0;
+        mouseScreenPos = Mouse.current.position.ReadValue();
+        mouseScreenPos.z = Camera.main.nearClipPlane + 1;
+        transform.position = Camera.main.ScreenToWorldPoint(mouseScreenPos);
+        if (transform.position.x > 6.5) transform.position = new Vector3(6.5f, transform.position.y, transform.position.z);
+        else if (transform.position.x < -6.5) transform.position = new Vector3(-6.5f, transform.position.y, transform.position.z);
+        if (transform.position.y > 4.7) transform.position = new Vector3(transform.position.x, 4.7f, transform.position.z);
+        else if (transform.position.y < -4.7) transform.position = new Vector3(transform.position.x, -4.7f, transform.position.z);
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            rb.linearVelocityX = -5f;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            rb.linearVelocityX = 5f;
-        }
-        else rb.linearVelocityX = 0;
+
+        //if (Input.GetKey(KeyCode.W))
+        //{
+        //    rb.linearVelocityY = 5f;
+        //}
+        //else if (Input.GetKey(KeyCode.S))
+        //{
+        //    rb.linearVelocityY = -5f;
+        //}
+        //else rb.linearVelocityY = 0;
+
+        //if (Input.GetKey(KeyCode.A))
+        //{
+        //    rb.linearVelocityX = -5f;
+        //}
+        //else if (Input.GetKey(KeyCode.D))
+        //{
+        //    rb.linearVelocityX = 5f;
+        //}
+        //else rb.linearVelocityX = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
