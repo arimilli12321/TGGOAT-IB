@@ -12,4 +12,9 @@ public class cursorCheckScript : MonoBehaviour
             else leftButton.SetActive(true);
         }
     }
+
+    void OnMouseExit() {
+        if (direction.Equals("right")) rightButton.SetActive(false);
+        else leftButton.SetActive(false);
+    }
 }
