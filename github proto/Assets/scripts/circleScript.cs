@@ -17,9 +17,15 @@ public class circleScript : MonoBehaviour
 
     void OnMouseOver()
     {
+        Debug.Log("gg");
         if (Input.GetMouseButtonDown(0))
         {
+<<<<<<< Updated upstream
             GameObject.Find("Incorrect").GetComponent<SpriteRenderer>().color = green2;
+=======
+            Debug.Log("ff");
+            GameObject.Find("Incorrect").GetComponent<SpriteRenderer>().color = gween;
+>>>>>>> Stashed changes
         }
     }
 }
