@@ -5,6 +5,8 @@ public class enemyScript : MonoBehaviour
     private Transform player;
     [SerializeField] private GameObject attack;
     private float timer = 0f;
+    [SerializeField] private int movment = 0;
+    [SerializeField] private string direction_ = "none";
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -16,7 +18,32 @@ public class enemyScript : MonoBehaviour
         direction.Normalize();
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle - 90);
-        if (timer >= 0.8f)
+        switch (movment)
+        {
+            case 1:
+                if (direction_.Equals("left"))
+                {
+                    transform.position += Vector3.left * 2f * Time.deltaTime;
+                    if (transform.position.x <= -4) direction_ = "right";
+                }
+                else if (direction_.Equals("right"))
+                {
+                    transform.position += Vector3.right * 2f * Time.deltaTime;
+                    if (transform.position.x >= 4) direction_ = "left";
+                }
+                else if (direction_.Equals("up"))
+                {
+                    transform.position += Vector3.up * 2f * Time.deltaTime;
+                    if (transform.position.y >= 3) direction_ = "down";
+                }
+                else if (direction_.Equals("down"))
+                {
+                    transform.position += Vector3.down * 2f * Time.deltaTime;
+                    if (transform.position.y <= -3) direction_ = "up";
+                }
+                break;
+        }
+        if (timer >= 1.5f)
         {
             spawnAttack();
             timer = 0f;
