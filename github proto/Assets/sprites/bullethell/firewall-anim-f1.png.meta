@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      firewall-anim-f1_0: 1102171748401683604
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
