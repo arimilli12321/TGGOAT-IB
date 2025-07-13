@@ -4,11 +4,12 @@ public class shieldScript : MonoBehaviour
 {
     private float regenerateCooldown = 0;
     [SerializeField] private SpriteRenderer disabledSprite;
+    [SerializeField] private Transform player;
     void Update()
     {
-        transform.RotateAround(transform.parent.position, Vector3.forward, -120f * Time.deltaTime);
+        transform.RotateAround(player.position, Vector3.forward, -120f * Time.deltaTime);
         if (regenerateCooldown > 0) regenerateCooldown -= Time.deltaTime;
-        if (regenerateCooldown < 0)
+        if (regenerateCooldown <= 0)
         {
             regenerateCooldown = 0;
             GetComponent<SpriteRenderer>().enabled = true;
