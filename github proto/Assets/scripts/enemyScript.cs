@@ -42,7 +42,11 @@ public class enemyScript : MonoBehaviour
                     if (transform.position.y <= -3) direction_ = "up";
                 }
                 break;
-        }
+            case 2:
+                if (direction_.Equals("clockwise")) transform.RotateAround(new Vector3(0, 0, 0), Vector3.back, 90f * Time.deltaTime);
+                else transform.RotateAround(new Vector3(0, 0, 0), Vector3.forward, 90f * Time.deltaTime);
+                break;
+        } 
         if (timer >= 1.5f)
         {
             spawnAttack();
