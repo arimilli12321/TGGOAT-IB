@@ -15,8 +15,8 @@ public class shieldScript : MonoBehaviour
         if (regenerateCooldown <= 0)
         {
             regenerateCooldown = 0;
-            GetComponent<SpriteRenderer>().enabled = true;
-            disabledSprite.color = new Color(0, 0, 0, 0);
+            transform.Find("sprite").GetComponent<SpriteRenderer>().enabled = true;
+            disabledSprite.gameObject.SetActive(false);
         }
     }
 
@@ -43,8 +43,8 @@ public class shieldScript : MonoBehaviour
                 winText.SetActive(true);
                 transform.parent.gameObject.SetActive(false);
             }
-            GetComponent<SpriteRenderer>().enabled = false;
-            disabledSprite.color = new Color(0, 0, 0, 100);
+            transform.Find("sprite").GetComponent<SpriteRenderer>().enabled = false;
+            disabledSprite.gameObject.SetActive(true);
         }
     }
 }

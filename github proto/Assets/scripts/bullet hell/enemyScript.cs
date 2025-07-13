@@ -25,22 +25,22 @@ public class enemyScript : MonoBehaviour
                 if (direction_.Equals("left"))
                 {
                     transform.position += Vector3.left * 2f * Time.deltaTime;
-                    if (transform.position.x <= -6.5) direction_ = "right";
+                    if (transform.position.x <= -6.2) direction_ = "right";
                 }
                 else if (direction_.Equals("right"))
                 {
                     transform.position += Vector3.right * 2f * Time.deltaTime;
-                    if (transform.position.x >= 6.5) direction_ = "left";
+                    if (transform.position.x >= 6.2) direction_ = "left";
                 }
                 else if (direction_.Equals("up"))
                 {
                     transform.position += Vector3.up * 2f * Time.deltaTime;
-                    if (transform.position.y >= 4.7) direction_ = "down";
+                    if (transform.position.y >= 4.4) direction_ = "down";
                 }
                 else if (direction_.Equals("down"))
                 {
                     transform.position += Vector3.down * 2f * Time.deltaTime;
-                    if (transform.position.y <= -4.7) direction_ = "up";
+                    if (transform.position.y <= -4.4) direction_ = "up";
                 }
                 break;
             case 2:
