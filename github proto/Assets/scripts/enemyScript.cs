@@ -7,6 +7,7 @@ public class enemyScript : MonoBehaviour
     private float timer = 0f;
     [SerializeField] private int movment = 0;
     [SerializeField] private string direction_ = "none";
+    [SerializeField] private Vector3 rotatePoint = Vector3.zero;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -43,8 +44,8 @@ public class enemyScript : MonoBehaviour
                 }
                 break;
             case 2:
-                if (direction_.Equals("clockwise")) transform.RotateAround(new Vector3(0, 0, 0), Vector3.back, 90f * Time.deltaTime);
-                else transform.RotateAround(new Vector3(0, 0, 0), Vector3.forward, 90f * Time.deltaTime);
+                if (direction_.Equals("clockwise")) transform.RotateAround(rotatePoint, Vector3.back, 90f * Time.deltaTime);
+                else transform.RotateAround(rotatePoint, Vector3.forward, 90f * Time.deltaTime);
                 break;
         } 
         if (timer >= 1.5f)
