@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      motherboard-basephoto_0: 8817535098838110400
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
