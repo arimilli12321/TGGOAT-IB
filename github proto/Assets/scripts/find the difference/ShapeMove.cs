@@ -35,13 +35,18 @@ public class ShapeSorting : MonoBehaviour
     }
     void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0) && (cursorCheckScript.draggedObject == null || cursorCheckScript.draggedObject == gameObject))
+        if (Input.GetMouseButton(0) && (cursorCheckScript.draggedObject == null || cursorCheckScript.draggedObject == gameObject))
         {
             if (canfollow == true)
             {
                 following = true;
                 if (cursorCheckScript.draggedObject == null) cursorCheckScript.draggedObject = gameObject;
             }
+        }
+        else if (!Input.GetMouseButton(0))
+        {
+            following = false;
+            cursorCheckScript.draggedObject = null;
         }
     }
 }
