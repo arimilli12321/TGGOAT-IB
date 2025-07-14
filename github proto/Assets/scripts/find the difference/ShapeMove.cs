@@ -8,6 +8,7 @@ public class ShapeSorting : MonoBehaviour
 
     private Vector3 mouseScreenPos;
     private bool following = false;
+    [SerializeField] private cursorCheckScript cursorCheckScript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,22 +18,19 @@ public class ShapeSorting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mouseScreenPos = Mouse.current.position.ReadValue();
-        mouseScreenPos.z = Camera.main.nearClipPlane + 1;
-        if (following == true)
+        if (following)
         {
+            mouseScreenPos = Mouse.current.position.ReadValue();
+            mouseScreenPos.z = Camera.main.nearClipPlane + 1;
             transform.position = Camera.main.ScreenToWorldPoint(mouseScreenPos);
         }
     }
     void OnMouseOver()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0) && (cursorCheckScript.draggedObject == null || cursorCheckScript.draggedObject == gameObject))
         {
             following = true;
-        }
-        if (!Input.GetMouseButton(0))
-        {
-            following = false;
+            if (cursorCheckScript.draggedObject == null) cursorCheckScript.draggedObject = gameObject;
         }
     }
 }
