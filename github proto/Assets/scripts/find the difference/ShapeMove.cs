@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -27,11 +26,6 @@ public class ShapeSorting : MonoBehaviour
             mouseScreenPos.z = Camera.main.nearClipPlane + 1;
             transform.position = Camera.main.ScreenToWorldPoint(mouseScreenPos);
         }
-        if (Big.transform.position.x >= -3.5f && Big.transform.position.x <= -2.5f)
-        {
-            canfollow = false;
-            following = false;
-        }
     }
     void OnMouseOver()
     {
@@ -47,6 +41,23 @@ public class ShapeSorting : MonoBehaviour
         {
             following = false;
             cursorCheckScript.draggedObject = null;
+        }
+    }
+    void OnTriggerStay2D(Collider2D collider)
+    {
+        if (collider.gameObject.name == "BigCollider")
+        {
+            if (gameObject.name == "Big")
+            {
+                if (following == false)
+                {
+                    if (canfollow == true)
+                    {
+                        canfollow = false;
+                        Big.transform.position = new Vector3(-3.175f, 2.35f, -1);
+                    }
+                }                
+            }
         }
     }
 }
