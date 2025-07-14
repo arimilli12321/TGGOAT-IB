@@ -10,7 +10,7 @@ public class ShapeSorting : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -18,13 +18,17 @@ public class ShapeSorting : MonoBehaviour
     {
         mouseScreenPos = Mouse.current.position.ReadValue();
         mouseScreenPos.z = Camera.main.nearClipPlane + 1;
-        if (Input.GetMouseButton(0))
-        {
-            following = true;
-        }
         if (following == true)
         {
             transform.position = Camera.main.ScreenToWorldPoint(mouseScreenPos);
         }
     }
+    void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            following = true;
+        }
+    }
 }
+
