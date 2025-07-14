@@ -61,32 +61,6 @@ public class ShapeSorting : MonoBehaviour
                 }
             }
         }
-<<<<<<< HEAD
-        if (collider.gameObject.name == "LongMediumCollider")
-        {
-            if (gameObject.name == "Long medium")
-=======
-        if (collider.gameObject.name == "Small corners collider")
-        {
-            if (gameObject.name == "Small corners")
->>>>>>> 60c378c4fd8b335ce21b8a6837de9025def7fab0
-            {
-                if (following == false)
-                {
-                    if (canfollow == true)
-                    {
-                        canfollow = false;
-<<<<<<< HEAD
-                        Long_medium.transform.position = new Vector3(-3.98f, -3.47f, -1);
-                    }
-                }                
-=======
-                        Small_corners.transform.position = new Vector3(-1.945f, -1.025f, -1);
-                    }
-                }
->>>>>>> 60c378c4fd8b335ce21b8a6837de9025def7fab0
-            }
-        }
     }
 }
 
