@@ -8,8 +8,12 @@ public class cursorCheckScript : MonoBehaviour
 
     void OnMouseOver () {
         if (controlScript.canGo.Equals(direction)) {
-            if (direction.Equals("right")) rightButton.SetActive(true);
-            else leftButton.SetActive(true);
+            if (direction.Equals("right"))
+            {
+                
+                controlScript.moveRight();
+            }
+            else controlScript.moveLeft();
         }
     }
 
