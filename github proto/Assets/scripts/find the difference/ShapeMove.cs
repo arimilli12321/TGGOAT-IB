@@ -99,7 +99,7 @@ public class ShapeSorting : MonoBehaviour
                     if (canfollow == true)
                     {
                         canfollow = false;
-                        Big_Vertical.transform.position = new Vector3(1.95f, 0, 0);
+                        Big_Vertical.transform.position = new Vector3(1.95f, -2.255f, -1);
                     }
                 }
             }
