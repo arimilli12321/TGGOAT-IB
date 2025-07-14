@@ -13,7 +13,7 @@ public class spawnerScript : MonoBehaviour
         {
             timer = 0;
             enemyCount++;
-            GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-6, 7), Random.Range(-4, 5), 0), Quaternion.identity);
+            GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-6, 7), Random.Range(-4, 5), -1), Quaternion.identity);
             newEnemy.SetActive(true);
             int enemyType = Random.Range(1, 4);
             if (enemyType == 1 || enemyType == 2)
@@ -49,7 +49,7 @@ public class spawnerScript : MonoBehaviour
         {
             timer = 0;
             enemyCount++;
-            GameObject newEnemy = Instantiate(enemy, new Vector3 (Random.Range(-6, 7), Random.Range(-4, 5), 0), Quaternion.identity);
+            GameObject newEnemy = Instantiate(enemy, new Vector3 (Random.Range(-6, 7), Random.Range(-4, 5), -1), Quaternion.identity);
             newEnemy.SetActive(true);
             int enemyType = Random.Range(1, 4);
             if (enemyType == 1 || enemyType == 2) 
