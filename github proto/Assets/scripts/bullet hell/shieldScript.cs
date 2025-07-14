@@ -40,7 +40,6 @@ public class shieldScript : MonoBehaviour
                     Destroy(gameObj);
                 }
                 player.gameObject.SetActive(false);
-                slider.gameObject.SetActive(false);
                 GameObject.FindGameObjectWithTag("spawner").SetActive(false);
                 winText.SetActive(true);
                 transform.parent.gameObject.SetActive(false);
