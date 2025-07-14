@@ -61,6 +61,21 @@ public class ShapeSorting : MonoBehaviour
                 }
             }
         }
+        if (collider.gameObject.name == "LongMediumCollider")
+        {
+            if (gameObject.name == "Long medium")
+            {
+                if (following == false)
+                {
+                    if (canfollow == true)
+                    {
+                        canfollow = false;
+                        Long_medium.transform.position = new Vector3(-3.98f, -3.47f, -1);
+                    }
+                }                
+                        Small_corners.transform.position = new Vector3(-1.945f, -1.025f, -1);
+                    }
+                }
     }
 }
 
