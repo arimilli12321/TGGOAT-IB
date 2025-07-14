@@ -71,39 +71,12 @@ public class ShapeSorting : MonoBehaviour
                     if (canfollow == true)
                     {
                         canfollow = false;
-                        Long_medium.transform.position = new Vector3(-3.98f, -3.475f, -1);
+                        Long_medium.transform.position = new Vector3(-3.98f, -3.47f, -1);
                     }
-                }
-            }
-        }
-        if (collider.gameObject.name == "Smallcornerscollider")
-        {
-            if (gameObject.name == "Smallcorners")
-            {
-                if (following == false)
-                {
-                    if (canfollow == true)
-                    {
-                        canfollow = false;
+                }                
                         Small_corners.transform.position = new Vector3(-1.945f, -1.025f, -1);
                     }
                 }
-            }
-        }
-        if (collider.gameObject.name == "VerticalCollider")
-        {
-            if (gameObject.name == "Big vertical")
-            {
-                if (following == false)
-                {
-                    if (canfollow == true)
-                    {
-                        canfollow = false;
-                        Big_Vertical.transform.position = new Vector3(1.95f, -2.255f, -1);
-                    }
-                }
-            }
-        }
     }
 }
 
