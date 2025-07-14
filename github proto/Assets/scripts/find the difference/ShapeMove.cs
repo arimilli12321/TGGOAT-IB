@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class ShapeSorting : MonoBehaviour
 {
+
     private Vector3 mouseScreenPos;
     private bool following = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
