@@ -7,6 +7,7 @@ public class ShapeSorting : MonoBehaviour
     [SerializeField] GameObject Big;
     [SerializeField] GameObject Small_corners;
     [SerializeField] GameObject Long_medium;
+    [SerializeField] GameObject Big_Vertical;
     private Vector3 mouseScreenPos;
     private bool canfollow = true;
     private bool following = false;
@@ -58,36 +59,49 @@ public class ShapeSorting : MonoBehaviour
                         canfollow = false;
                         Big.transform.position = new Vector3(-3.175f, 2.35f, -1);
                     }
-<<<<<<< HEAD
                 }
             }
         }
-<<<<<<< HEAD
         if (collider.gameObject.name == "LongMediumCollider")
         {
             if (gameObject.name == "Long medium")
-=======
-        if (collider.gameObject.name == "Small corners collider")
-        {
-            if (gameObject.name == "Small corners")
->>>>>>> 60c378c4fd8b335ce21b8a6837de9025def7fab0
             {
                 if (following == false)
                 {
                     if (canfollow == true)
                     {
                         canfollow = false;
-<<<<<<< HEAD
-                        Long_medium.transform.position = new Vector3(-3.98f, -3.47f, -1);
+                        Long_medium.transform.position = new Vector3(-3.98f, -3.475f, -1);
                     }
-=======
->>>>>>> parent of facf02e (added long medium snapping)
-                }                
-=======
+                }
+            }
+        }
+        if (collider.gameObject.name == "Smallcornerscollider")
+        {
+            if (gameObject.name == "Smallcorners")
+            {
+                if (following == false)
+                {
+                    if (canfollow == true)
+                    {
+                        canfollow = false;
                         Small_corners.transform.position = new Vector3(-1.945f, -1.025f, -1);
                     }
                 }
->>>>>>> 60c378c4fd8b335ce21b8a6837de9025def7fab0
+            }
+        }
+        if (collider.gameObject.name == "VerticalCollider")
+        {
+            if (gameObject.name == "Big vertical")
+            {
+                if (following == false)
+                {
+                    if (canfollow == true)
+                    {
+                        canfollow = false;
+                        Big_Vertical.transform.position = new Vector3(1.95f, 0, 0);
+                    }
+                }
             }
         }
     }
