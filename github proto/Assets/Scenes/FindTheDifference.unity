@@ -220,6 +220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5b36e3619436cba212ba41535653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Big: {fileID: 465594934}
+  Small_corners: {fileID: 1897497747}
 --- !u!65 &94313106
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -342,6 +344,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5b36e3619436cba212ba41535653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Big: {fileID: 465594934}
+  Small_corners: {fileID: 1897497747}
 --- !u!65 &247394369
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -551,6 +555,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5b36e3619436cba212ba41535653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Big: {fileID: 465594934}
+  Small_corners: {fileID: 1897497747}
 --- !u!65 &361975490
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -673,6 +679,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5b36e3619436cba212ba41535653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Big: {fileID: 465594934}
+  Small_corners: {fileID: 1897497747}
 --- !u!61 &465594938
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -902,6 +910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 238aa5e7dc2e5004a894d9991e8ccecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  draggedObject: {fileID: 0}
   controlScript: {fileID: 1806383098}
   direction: left
   rightButton: {fileID: 1756372527}
@@ -1173,6 +1182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5b36e3619436cba212ba41535653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Big: {fileID: 465594934}
+  Small_corners: {fileID: 1897497747}
 --- !u!65 &1142621467
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1295,6 +1306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5b36e3619436cba212ba41535653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Big: {fileID: 465594934}
+  Small_corners: {fileID: 1897497747}
 --- !u!65 &1155994941
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1417,6 +1430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5b36e3619436cba212ba41535653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Big: {fileID: 465594934}
+  Small_corners: {fileID: 1897497747}
 --- !u!65 &1225044160
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1529,6 +1544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 238aa5e7dc2e5004a894d9991e8ccecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  draggedObject: {fileID: 0}
   controlScript: {fileID: 1806383098}
   direction: right
   rightButton: {fileID: 1756372527}
@@ -2001,6 +2017,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5b36e3619436cba212ba41535653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Big: {fileID: 465594934}
+  Small_corners: {fileID: 1897497747}
 --- !u!65 &1764466409
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2172,6 +2190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5b36e3619436cba212ba41535653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Big: {fileID: 465594934}
+  Small_corners: {fileID: 1897497747}
 --- !u!65 &1888651060
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2294,6 +2314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5b36e3619436cba212ba41535653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Big: {fileID: 465594934}
+  Small_corners: {fileID: 1897497747}
 --- !u!65 &1897497751
 BoxCollider:
   m_ObjectHideFlags: 0
