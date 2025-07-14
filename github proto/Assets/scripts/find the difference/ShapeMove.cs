@@ -5,7 +5,9 @@ using UnityEngine.InputSystem;
 
 public class ShapeSorting : MonoBehaviour
 {
-
+    [SerializeField] GameObject Big;
+    [SerializeField] GameObject Small_corners;
+    [SerializeField] GameObject Long_medium;
     private Vector3 mouseScreenPos;
     private bool following = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
