@@ -58,7 +58,21 @@ public class ShapeSorting : MonoBehaviour
                         canfollow = false;
                         Big.transform.position = new Vector3(-3.175f, 2.35f, -1);
                     }
-                }                
+                }
+            }
+        }
+        if (collider.gameObject.name == "Small corners collider")
+        {
+            if (gameObject.name == "Small corners")
+            {
+                if (following == false)
+                {
+                    if (canfollow == true)
+                    {
+                        canfollow = false;
+                        Small_corners.transform.position = new Vector3(-1.945f, -1.025f, -1);
+                    }
+                }
             }
         }
     }
