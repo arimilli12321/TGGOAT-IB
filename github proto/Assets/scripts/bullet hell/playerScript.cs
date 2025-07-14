@@ -43,7 +43,6 @@ public class playerScript : MonoBehaviour
             loseText.SetActive(true);
             loseButton.SetActive(true);
             if (Slider.value == Slider.maxValue) winText.SetActive(false);
-            Slider.gameObject.SetActive(false);
             GameObject.FindGameObjectWithTag("spawner").SetActive(false);
             gameObject.SetActive(false);
         }

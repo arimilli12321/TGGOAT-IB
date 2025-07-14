@@ -8,9 +8,10 @@ public class shieldScript : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] public Slider slider;
     [SerializeField] private GameObject winText;
+    [SerializeField] private spawnerScript spawnerScript;
     void Update()
     {
-        transform.RotateAround(player.position, Vector3.forward, -120f * Time.deltaTime);
+        transform.RotateAround(player.position, Vector3.forward, -150f * Time.deltaTime);
         if (regenerateCooldown > 0) regenerateCooldown -= Time.deltaTime;
         if (regenerateCooldown <= 0)
         {
@@ -27,6 +28,7 @@ public class shieldScript : MonoBehaviour
             Destroy(collider.gameObject);
             regenerateCooldown = 3f;
             slider.value += 1;
+            spawnerScript.enemyCount--;
             if (slider.value == slider.maxValue)
             {
                 foreach (GameObject gameObj in GameObject.FindGameObjectsWithTag("attack"))
@@ -38,7 +40,6 @@ public class shieldScript : MonoBehaviour
                     Destroy(gameObj);
                 }
                 player.gameObject.SetActive(false);
-                slider.gameObject.SetActive(false);
                 GameObject.FindGameObjectWithTag("spawner").SetActive(false);
                 winText.SetActive(true);
                 transform.parent.gameObject.SetActive(false);
