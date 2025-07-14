@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      motherboard-component-2_0: 4309712216777500422
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
