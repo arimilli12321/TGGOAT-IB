@@ -14,7 +14,7 @@ public class BallControl : MonoBehaviour
     {
         Vector3 mousePosition = Input.mousePosition;
 
-        mousePosition.z = mainCamera.nearClipPlane; 
+        mousePosition.z = mainCamera.nearClipPlane;
         Vector3 worldMousePosition = mainCamera.ScreenToWorldPoint(mousePosition);
 
         Vector3 direction = worldMousePosition - transform.position;
@@ -24,5 +24,10 @@ public class BallControl : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0, 0, angle - 270);
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            
+        }
     }
 }
