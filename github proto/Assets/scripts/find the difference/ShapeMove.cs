@@ -29,6 +29,22 @@ public class ShapeSorting : MonoBehaviour
             mouseScreenPos.z = Camera.main.nearClipPlane + 1;
             transform.position = Camera.main.ScreenToWorldPoint(mouseScreenPos);
             transform.position = new Vector3(transform.position.x, transform.position.y, -2);
+            if (transform.position.x > 8.6 + Camera.main.transform.position.x)
+            {
+                transform.position = new Vector3(8.6f + Camera.main.transform.position.x, transform.position.y, transform.position.z);
+            }
+            else if (transform.position.x < -8.6 + Camera.main.transform.position.x)
+            {
+                transform.position = new Vector3(-8.6f + Camera.main.transform.position.x, transform.position.y, transform.position.z);
+            }
+            if (transform.position.y > 4.7 + Camera.main.transform.position.y)
+            {
+                transform.position = new Vector3(transform.position.x, 4.7f + Camera.main.transform.position.y, transform.position.z);
+            }
+            else if (transform.position.y < -4.7 + Camera.main.transform.position.y)
+            {
+                transform.position = new Vector3(transform.position.x, -4.7f + Camera.main.transform.position.y, transform.position.z);
+            }
         }
     }
 
