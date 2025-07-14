@@ -7,6 +7,7 @@ public class ShapeSorting : MonoBehaviour
     [SerializeField] GameObject Big;
     [SerializeField] GameObject Small_corners;
     [SerializeField] GameObject Long_medium;
+    [SerializeField] GameObject Big_Vertical;
     private Vector3 mouseScreenPos;
     private bool canfollow = true;
     private bool following = false;
