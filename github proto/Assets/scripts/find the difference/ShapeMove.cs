@@ -26,6 +26,7 @@ public class ShapeSorting : MonoBehaviour
             mouseScreenPos = Mouse.current.position.ReadValue();
             mouseScreenPos.z = Camera.main.nearClipPlane + 1;
             transform.position = Camera.main.ScreenToWorldPoint(mouseScreenPos);
+            transform.position = new Vector3(transform.position.x, transform.position.y, -1);
         }
         if (Big.transform.position.x >= -3.5f && Big.transform.position.x <= -2.5f)
         {
@@ -47,6 +48,7 @@ public class ShapeSorting : MonoBehaviour
         {
             following = false;
             cursorCheckScript.draggedObject = null;
+            transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         }
     }
 }
