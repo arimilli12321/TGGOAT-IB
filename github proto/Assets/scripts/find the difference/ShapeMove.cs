@@ -25,7 +25,7 @@ public class ShapeSorting : MonoBehaviour
             mouseScreenPos = Mouse.current.position.ReadValue();
             mouseScreenPos.z = Camera.main.nearClipPlane + 1;
             transform.position = Camera.main.ScreenToWorldPoint(mouseScreenPos);
-            transform.position = new Vector3(transform.position.x, transform.position.y, -1);
+            transform.position = new Vector3(transform.position.x, transform.position.y, -2);
         }
     }
     void OnMouseOver()
@@ -42,7 +42,7 @@ public class ShapeSorting : MonoBehaviour
         {
             following = false;
             cursorCheckScript.draggedObject = null;
-            transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+            transform.position = new Vector3(transform.position.x, transform.position.y, -1);
         }
     }
     void OnTriggerStay2D(Collider2D collider)
