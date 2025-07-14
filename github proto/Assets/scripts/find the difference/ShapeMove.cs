@@ -58,6 +58,7 @@ public class ShapeSorting : MonoBehaviour
                         canfollow = false;
                         Big.transform.position = new Vector3(-3.175f, 2.35f, -1);
                     }
+<<<<<<< HEAD
                 }
             }
         }
@@ -79,6 +80,8 @@ public class ShapeSorting : MonoBehaviour
 <<<<<<< HEAD
                         Long_medium.transform.position = new Vector3(-3.98f, -3.47f, -1);
                     }
+=======
+>>>>>>> parent of facf02e (added long medium snapping)
                 }                
 =======
                         Small_corners.transform.position = new Vector3(-1.945f, -1.025f, -1);
