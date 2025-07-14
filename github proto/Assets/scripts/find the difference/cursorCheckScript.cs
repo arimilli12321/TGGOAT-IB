@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class cursorCheckScript : MonoBehaviour
 {
+    public GameObject draggedObject = null;
     [SerializeField] private controlScript controlScript;
     [SerializeField] private string direction;
     [SerializeField] private GameObject rightButton, leftButton;
@@ -10,10 +11,15 @@ public class cursorCheckScript : MonoBehaviour
         if (controlScript.canGo.Equals(direction)) {
             if (direction.Equals("right"))
             {
-                
-                controlScript.moveRight();
+                if (controlScript.moving == false)
+                {
+                    controlScript.moveRight();                    
+                }
             }
-            else controlScript.moveLeft();
+            else if (controlScript.moving == false)
+                {
+                    controlScript.moveLeft();                    
+                }
         }
     }
 

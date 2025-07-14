@@ -26,9 +26,13 @@ public class ShapeSorting : MonoBehaviour
     }
     void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             following = true;
+        }
+        if (!Input.GetMouseButton(0))
+        {
+            following = false;
         }
     }
 }
