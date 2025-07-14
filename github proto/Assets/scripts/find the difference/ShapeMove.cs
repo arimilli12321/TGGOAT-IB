@@ -27,6 +27,22 @@ public class ShapeSorting : MonoBehaviour
             mouseScreenPos.z = Camera.main.nearClipPlane + 1;
             transform.position = Camera.main.ScreenToWorldPoint(mouseScreenPos);
             transform.position = new Vector3(transform.position.x, transform.position.y, -2);
+            if (transform.position.x > 8.6 + Camera.main.transform.position.x)
+            {
+                transform.position = new Vector3(8.6f + Camera.main.transform.position.x, transform.position.y, transform.position.z);
+            }
+            else if (transform.position.x < -8.6 + Camera.main.transform.position.x)
+            {
+                transform.position = new Vector3(-8.6f + Camera.main.transform.position.x, transform.position.y, transform.position.z);
+            }
+            if (transform.position.y > 4.7 + Camera.main.transform.position.y)
+            {
+                transform.position = new Vector3(transform.position.x, 4.7f + Camera.main.transform.position.y, transform.position.z);
+            }
+            else if (transform.position.y < -4.7 + Camera.main.transform.position.y)
+            {
+                transform.position = new Vector3(transform.position.x, -4.7f + Camera.main.transform.position.y, transform.position.z);
+            } 
         }
     }
     void OnMouseOver()
@@ -71,12 +87,38 @@ public class ShapeSorting : MonoBehaviour
                     if (canfollow == true)
                     {
                         canfollow = false;
-                        Long_medium.transform.position = new Vector3(-3.98f, -3.47f, -1);
+                        Long_medium.transform.position = new Vector3(-3.98f, -3.475f, -1);
                     }
-                }                
+                }
+            }
+        }
+        if (collider.gameObject.name == "Smallcornerscollider")
+        {
+            if (gameObject.name == "Smallcorners")
+            {
+                if (following == false)
+                {
+                    if (canfollow == true)
+                    {
+                        canfollow = false;
                         Small_corners.transform.position = new Vector3(-1.945f, -1.025f, -1);
                     }
                 }
+            }
+        }
+        if (collider.gameObject.name == "VerticalCollider")
+        {
+            if (gameObject.name == "Big vertical")
+            {
+                if (following == false)
+                {
+                    if (canfollow == true)
+                    {
+                        canfollow = false;
+                        Big_Vertical.transform.position = new Vector3(1.95f, -2.255f, -1);
+                    }
+                }
+            }
+        }
     }
 }
-
