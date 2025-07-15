@@ -1,26 +1,54 @@
+using System.Collections;
 using UnityEngine;
 
 public class powerScript : MonoBehaviour
 {
     [SerializeField] private float power;
-    [SerializeField] private GameObject direction;
+    [SerializeField] private GameObject ball;
+    private float timer = 0;
+    private bool clicked = false;
+
+    void Update()
+    {
+        if (timer < 2f && clicked)
+        {
+            if (ball.GetComponent<BallControl>().enabled) ball.GetComponent<BallControl>().enabled = false;
+            if (ball.transform.Find("power 1").GetComponent<SpriteRenderer>().enabled)
+            {
+                ball.transform.Find("power 1").GetComponent<SpriteRenderer>().enabled = false;
+            }
+            if (ball.transform.Find("power 2").GetComponent<SpriteRenderer>().enabled)
+            {
+                ball.transform.Find("power 2").GetComponent<SpriteRenderer>().enabled = false;
+            }
+            if (ball.transform.Find("power 3").GetComponent<SpriteRenderer>().enabled)
+            {
+                ball.transform.Find("power 3").GetComponent<SpriteRenderer>().enabled = false;
+            }
+            if (ball.transform.Find("direction sprite").GetComponent<SpriteRenderer>().enabled)
+            {
+                ball.transform.Find("direction sprite").GetComponent<SpriteRenderer>().enabled = false;
+            }
+            ball.transform.position += ball.transform.up * 2f * Time.deltaTime;
+            timer += Time.deltaTime;
+        }
+        else if (timer >= 2f)
+        {
+            ball.GetComponent<BallControl>().enabled = true;
+            ball.transform.Find("power 1").GetComponent<SpriteRenderer>().enabled = true;
+            ball.transform.Find("power 2").GetComponent<SpriteRenderer>().enabled = true;
+            ball.transform.Find("power 3").GetComponent<SpriteRenderer>().enabled = true;
+            ball.transform.Find("direction sprite").GetComponent<SpriteRenderer>().enabled = true;
+            timer = 0;
+            clicked = false;
+        }
+    }
 
     void OnMouseOver()
     {
-        if (power == 1)
+        if (Input.GetMouseButtonDown(0))
         {
-            direction.transform.position = new Vector3(0, 0.1f, -2) - direction.transform.parent.transform.position;
-            direction.transform.localScale = new Vector3(0.75f, 2, 0);
+            if (!clicked) clicked = true;
         }
-        else if (power == 2)
-        {
-            direction.transform.position = new Vector3(0, 0.2f, -1) - direction.transform.parent.transform.position;;
-            direction.transform.localScale = new Vector3(0.75f, 4, 0);
-        } 
-        else if (power == 3)
-        {
-            direction.transform.position = new Vector3(0, 0.3f, -1) - direction.transform.parent.transform.position;;
-            direction.transform.localScale = new Vector3(0.75f, 6, 0);
-        } 
-    } 
+    }
 }
