@@ -17,9 +17,9 @@ public class cursorCheckScript : MonoBehaviour
                 }
             }
             else if (controlScript.moving == false)
-                {
-                    controlScript.moveLeft();                    
-                }
+            {
+                controlScript.moveLeft();                    
+            }
         }
     }
 

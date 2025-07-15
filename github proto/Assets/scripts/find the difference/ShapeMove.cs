@@ -65,7 +65,6 @@ public class ShapeSorting : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, -1);
         }
     }
-
     void OnTriggerStay2D(Collider2D collider)
     {
         if (collider.gameObject.name == "BigCollider")
@@ -92,6 +91,19 @@ public class ShapeSorting : MonoBehaviour
                     {
                         canfollow = false;
                         Long_medium.transform.position = new Vector3(-3.98f, -3.475f, -1);
+                    }
+                }
+            }
+        }
+        if (collider.gameObject.name == "Smallcornerscollider")
+        {
+            if (gameObject.name == "Smallcorners")
+            {
+                if (following == false)
+                {
+                    if (canfollow == true)
+                    {
+                        canfollow = false;
                     }
                 }
             }
@@ -190,4 +202,3 @@ public class ShapeSorting : MonoBehaviour
         }
     }
 }
-

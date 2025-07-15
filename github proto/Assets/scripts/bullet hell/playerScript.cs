@@ -3,13 +3,16 @@ using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using System.Collections.Generic;
 public class playerScript : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Vector3 mouseScreenPos;
     [SerializeField] private GameObject loseText, winText, loseButton;
     [SerializeField] private Transform shields;
-    [SerializeField] private Slider Slider;
+    [SerializeField] private GameObject Slider;
+    public int sliderValue, sliderMaxValue;
+    [SerializeField] private List<Sprite> sliderSprites;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -42,7 +45,7 @@ public class playerScript : MonoBehaviour
             Destroy(shields.gameObject);
             loseText.SetActive(true);
             loseButton.SetActive(true);
-            if (Slider.value == Slider.maxValue) winText.SetActive(false);
+            if (sliderValue == sliderMaxValue) winText.SetActive(false);
             GameObject.FindGameObjectWithTag("spawner").SetActive(false);
             gameObject.SetActive(false);
         }
@@ -51,5 +54,10 @@ public class playerScript : MonoBehaviour
     public void Reset()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void changeSliderValue()
+    {
+        Slider.GetComponent<SpriteRenderer>().sprite = sliderSprites[sliderValue];
     }
 }
