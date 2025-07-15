@@ -29,7 +29,7 @@ public class powerScript : MonoBehaviour
             {
                 ball.transform.Find("direction sprite").GetComponent<SpriteRenderer>().enabled = false;
             }
-            ball.transform.position += ball.transform.up * 2f * Time.deltaTime;
+            ball.transform.position += ball.transform.up * power * Time.deltaTime;
             timer += Time.deltaTime;
         }
         else if (timer >= 2f)
