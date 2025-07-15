@@ -10,7 +10,7 @@ public class powerScript : MonoBehaviour
 
     void Update()
     {
-        if (timer < 2f && clicked)
+        if (timer < 1.5f && clicked)
         {
             if (ball.GetComponent<BallControl>().enabled) ball.GetComponent<BallControl>().enabled = false;
             if (ball.transform.Find("power 1").GetComponent<SpriteRenderer>().enabled)
@@ -32,7 +32,11 @@ public class powerScript : MonoBehaviour
             ball.transform.position += ball.transform.up * power * Time.deltaTime;
             timer += Time.deltaTime;
         }
-        else if (timer >= 2f)
+        else if (timer >= 1.5f && timer < 1.7f)
+        {
+            timer += Time.deltaTime;
+        }
+        else if (timer >= 1.7f)
         {
             ball.GetComponent<BallControl>().enabled = true;
             ball.transform.Find("power 1").GetComponent<SpriteRenderer>().enabled = true;
