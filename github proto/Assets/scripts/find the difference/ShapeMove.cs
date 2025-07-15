@@ -104,19 +104,6 @@ public class ShapeSorting : MonoBehaviour
                     if (canfollow == true)
                     {
                         canfollow = false;
-                    }
-                }
-            }
-        }
-        if (collider.gameObject.name == "Smallcornerscollider")
-        {
-            if (gameObject.name == "Smallcorners")
-            {
-                if (following == false)
-                {
-                    if (canfollow == true)
-                    {
-                        canfollow = false;
                         Small_corners.transform.position = new Vector3(-1.945f, -1.025f, -1);
                     }
                 }
@@ -160,42 +147,6 @@ public class ShapeSorting : MonoBehaviour
                     {
                         canfollow = false;
                         Long_small.transform.position = new Vector3(1.7f, 3.55f, 0);
-                    }
-                }
-            }
-        }
-        if (collider.gameObject.name == "NoCorners1")
-        {
-            if (gameObject.name == "No corners")
-            {
-                if (following == false)
-                {
-                    if (canfollow == true)
-                    {
-                        if (collider.GetComponent<Collider2D>().enabled == true)
-                        {
-                            canfollow = false;
-                            collider.GetComponent<Collider2D>().enabled = false;
-                            gameObject.transform.position = new Vector3(-0.87f, -3.36f, -1);
-                        }
-                    }
-                }
-            }
-        }
-        if (collider.gameObject.name == "NoCorners2")
-        {
-            if (gameObject.name == "No corners")
-            {
-                if (following == false)
-                {
-                    if (canfollow == true)
-                    {
-                        if (collider.GetComponent<Collider2D>().enabled == true)
-                        {
-                            canfollow = false;
-                            collider.GetComponent<Collider2D>().enabled = false;
-                            gameObject.transform.position = new Vector3(4.68f, -3.32f, -1);
-                        }
                     }
                 }
             }
