@@ -45,9 +45,9 @@ public class ShapeSorting : MonoBehaviour
             {
                 transform.position = new Vector3(transform.position.x, -4.7f + Camera.main.transform.position.y, transform.position.z);
             }
-
         }
     }
+
     void OnMouseOver()
     {
         if (Input.GetMouseButton(0) && (cursorCheckScript.draggedObject == null || cursorCheckScript.draggedObject == gameObject))
