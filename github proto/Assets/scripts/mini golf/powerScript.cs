@@ -42,7 +42,10 @@ public class powerScript : MonoBehaviour
             ball.transform.Find("power 1").GetComponent<SpriteRenderer>().enabled = true;
             ball.transform.Find("power 2").GetComponent<SpriteRenderer>().enabled = true;
             ball.transform.Find("power 3").GetComponent<SpriteRenderer>().enabled = true;
-            ball.transform.Find("direction sprite").GetComponent<SpriteRenderer>().enabled = true;
+            if (ball.GetComponent<BallControl>().showDirection)
+            {
+                ball.transform.Find("direction sprite").GetComponent<SpriteRenderer>().enabled = true;
+            } 
             timer = 0;
             clicked = false;
         }
