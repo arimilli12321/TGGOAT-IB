@@ -8,6 +8,8 @@ public class ShapeSorting : MonoBehaviour
     [SerializeField] GameObject Small_corners;
     [SerializeField] GameObject Long_medium;
     [SerializeField] GameObject Big_Vertical;
+    [SerializeField] GameObject Thin_long;
+    [SerializeField] GameObject Long_small;
     private Vector3 mouseScreenPos;
     private bool canfollow = true;
     private bool following = false;
@@ -42,7 +44,8 @@ public class ShapeSorting : MonoBehaviour
             else if (transform.position.y < -4.7 + Camera.main.transform.position.y)
             {
                 transform.position = new Vector3(transform.position.x, -4.7f + Camera.main.transform.position.y, transform.position.z);
-            } 
+            }
+
         }
     }
     void OnMouseOver()
@@ -101,7 +104,62 @@ public class ShapeSorting : MonoBehaviour
                     if (canfollow == true)
                     {
                         canfollow = false;
+                    }
+                }
+            }
+        }
+        if (collider.gameObject.name == "Smallcornerscollider")
+        {
+            if (gameObject.name == "Smallcorners")
+            {
+                if (following == false)
+                {
+                    if (canfollow == true)
+                    {
+                        canfollow = false;
                         Small_corners.transform.position = new Vector3(-1.945f, -1.025f, -1);
+                    }
+                }
+            }
+        }
+        if (collider.gameObject.name == "VerticalCollider")
+        {
+            if (gameObject.name == "Big vertical")
+            {
+                if (following == false)
+                {
+                    if (canfollow == true)
+                    {
+                        canfollow = false;
+                        Big_Vertical.transform.position = new Vector3(1.95f, -2.255f, -1);
+                    }
+                }
+            }
+        }
+        if (collider.gameObject.name == "LongCollider")
+        {
+            if (gameObject.name == "Long thin")
+            {
+                if (following == false)
+                {
+                    if (canfollow == true)
+                    {
+                        canfollow = false;
+                        Thin_long.transform.position = new Vector3(2.76f, 0.62f, -1);
+                    }
+                }
+            }
+        }
+        if (collider.gameObject.name == "longsmallcollider")
+        {
+            if (gameObject.name == "long small")
+            {
+                if (following == false)
+                {
+                    if (canfollow == true)
+                    {
+                        canfollow = false;
+                        Long_small.transform.position = new Vector3(1.7f, 3.55f, 0);
                     }
                 }
             }
