@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bullethell-killbar-9_0: -6032093047408021964
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

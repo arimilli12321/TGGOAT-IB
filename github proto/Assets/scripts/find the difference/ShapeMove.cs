@@ -164,16 +164,38 @@ public class ShapeSorting : MonoBehaviour
                 }
             }
         }
-        if (collider.gameObject.name == "VerticalCollider")
+        if (collider.gameObject.name == "NoCorners1")
         {
-            if (gameObject.name == "Big vertical")
+            if (gameObject.name == "No corners")
             {
                 if (following == false)
                 {
                     if (canfollow == true)
                     {
-                        canfollow = false;
-                        Big_Vertical.transform.position = new Vector3(1.95f, -2.255f, -1);
+                        if (collider.GetComponent<Collider2D>().enabled == true)
+                        {
+                            canfollow = false;
+                            collider.GetComponent<Collider2D>().enabled = false;
+                            gameObject.transform.position = new Vector3(-0.87f, -3.36f, -1);
+                        }
+                    }
+                }
+            }
+        }
+        if (collider.gameObject.name == "NoCorners2")
+        {
+            if (gameObject.name == "No corners")
+            {
+                if (following == false)
+                {
+                    if (canfollow == true)
+                    {
+                        if (collider.GetComponent<Collider2D>().enabled == true)
+                        {
+                            canfollow = false;
+                            collider.GetComponent<Collider2D>().enabled = false;
+                            gameObject.transform.position = new Vector3(4.68f, -3.32f, -1);
+                        }
                     }
                 }
             }
