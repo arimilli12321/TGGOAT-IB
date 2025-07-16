@@ -1,6 +1,7 @@
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class BallControl : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class BallControl : MonoBehaviour
     public bool showDirection = true;
     private bool isForward = false;
     public int shots = 5;
-
+    [SerializeField] public TMP_Text shotsText;
+    [SerializeField] private GameObject loseUI, winUi;
 
     void Update()
     {
@@ -68,7 +70,11 @@ public class BallControl : MonoBehaviour
     {
         if (collider.CompareTag("hole"))
         {
-            transform.Find("power 1").GetComponent<powerScript>().lose();
+            lose();
+        }
+        else if (collider.CompareTag("Finish"))
+        {
+            win();
         }
         else
         {
@@ -76,6 +82,24 @@ public class BallControl : MonoBehaviour
             if (collider.name.Equals("x Wall")) transform.rotation = Quaternion.Inverse(transform.rotation);
             else transform.rotation = Quaternion.Euler(0, 0, 180 - z);
         }
+    }
+
+    public void lose()
+    {
+        foreach (GameObject gameObj in GameObject.FindGameObjectsWithTag("hole")) Destroy(gameObj);
+        foreach (GameObject gameObj in GameObject.FindGameObjectsWithTag("Finish")) Destroy(gameObj);
+        shotsText.gameObject.SetActive(false);
+        loseUI.SetActive(true);
+        gameObject.SetActive(false);
+    }
+
+    private void win()
+    {
+        foreach (GameObject gameObj in GameObject.FindGameObjectsWithTag("hole")) Destroy(gameObj);
+        foreach (GameObject gameObj in GameObject.FindGameObjectsWithTag("Finish")) Destroy(gameObj);
+        shotsText.gameObject.SetActive(false);
+        winUi.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     public void Reset()
