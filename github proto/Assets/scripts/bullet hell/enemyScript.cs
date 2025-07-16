@@ -4,7 +4,7 @@ public class enemyScript : MonoBehaviour
 {
     private Transform player;
     [SerializeField] private GameObject attack;
-    private float timer = 0f;
+    public float timer = 0f;
     [SerializeField] public int movement = 0;
     [SerializeField] public string direction_ = "none";
     [SerializeField] public Vector3 rotatePoint = Vector3.zero;

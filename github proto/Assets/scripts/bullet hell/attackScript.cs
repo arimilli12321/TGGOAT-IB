@@ -9,6 +9,6 @@ public class attackScript : MonoBehaviour
 
     void Update()
     {
-        transform.position += transform.up * 5f * Time.deltaTime;
+        transform.position += transform.up * 4f * Time.deltaTime;
     }
 }
