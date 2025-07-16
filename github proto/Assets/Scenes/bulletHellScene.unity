@@ -1420,7 +1420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyCount: 0
-  spawnRate: 2.5
+  spawnRate: 2
   enemy: {fileID: 2101107427}
 --- !u!4 &1153288180
 Transform:
@@ -2356,7 +2356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: {fileID: 822748877}
-  timer: 1
+  timer: 0
   movement: 0
   direction_: up
   rotatePoint: {x: 0, y: 0, z: 0}

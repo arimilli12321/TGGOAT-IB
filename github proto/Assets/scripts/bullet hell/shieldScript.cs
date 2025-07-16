@@ -25,7 +25,7 @@ public class shieldScript : MonoBehaviour
         if (collider.gameObject.CompareTag("enemy") && regenerateCooldown == 0)
         {
             Destroy(collider.gameObject);
-            regenerateCooldown = 3f;
+            regenerateCooldown = 2.5f;
             player.GetComponent<playerScript>().sliderValue += 1;
             player.GetComponent<playerScript>().changeSliderValue();
             spawnerScript.enemyCount--;
