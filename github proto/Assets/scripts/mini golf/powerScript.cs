@@ -1,5 +1,7 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class powerScript : MonoBehaviour
 {
@@ -7,6 +9,8 @@ public class powerScript : MonoBehaviour
     [SerializeField] private GameObject ball;
     private float timer = 0;
     private bool clicked = false;
+    [SerializeField] private TMP_Text shotsText;
+    [SerializeField] private GameObject loseText;
 
     void Update()
     {
@@ -45,9 +49,15 @@ public class powerScript : MonoBehaviour
             if (ball.GetComponent<BallControl>().showDirection)
             {
                 ball.transform.Find("direction sprite").GetComponent<SpriteRenderer>().enabled = true;
-            } 
+            }
             timer = 0;
             clicked = false;
+            ball.GetComponent<BallControl>().shots--;
+            shotsText.text = $"{ball.GetComponent<BallControl>().shots} shots left";
+            if (ball.GetComponent<BallControl>().shots == 0)
+            {
+                lose();
+            }
         }
     }
 
@@ -55,7 +65,18 @@ public class powerScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (!clicked) clicked = true;
+            if (!clicked)
+            {
+                clicked = true;
+            }
         }
+    }
+
+    public void lose()
+    {
+        foreach (GameObject gameObj in GameObject.FindGameObjectsWithTag("hole")) Destroy(gameObj);
+        shotsText.gameObject.SetActive(false);
+        loseText.SetActive(true);
+        transform.parent.gameObject.SetActive(false);
     }
 }
