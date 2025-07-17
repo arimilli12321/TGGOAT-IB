@@ -16,6 +16,7 @@ public class ShapeSorting : MonoBehaviour
     private bool canfollow = true;
     private bool following = false;
     [SerializeField] private cursorCheckScript cursorCheckScript;
+    private float Timer = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,6 +30,20 @@ public class ShapeSorting : MonoBehaviour
         {
             mouseScreenPos = Mouse.current.position.ReadValue();
             mouseScreenPos.z = Camera.main.nearClipPlane + 1;
+            if (controls.canGo.Equals("right") && Camera.main.ScreenToWorldPoint(mouseScreenPos).x <= 7.5)
+            {
+                GetComponent<Collider2D>().enabled = false;
+                while (Timer < 0.1f) Timer += Time.deltaTime;
+                Timer = 0;
+                GetComponent<Collider2D>().enabled = true;
+            }
+            else if (Camera.main.ScreenToWorldPoint(mouseScreenPos).x <= 7.5)
+            {
+                GetComponent<Collider2D>().enabled = false;
+                while (Timer < 0.1f) Timer += Time.deltaTime;
+                Timer = 0;
+                GetComponent<Collider2D>().enabled = true;
+            }
             transform.position = Camera.main.ScreenToWorldPoint(mouseScreenPos);
             transform.position = new Vector3(transform.position.x, transform.position.y, -4);
             if (transform.position.x > 8.6 + Camera.main.transform.position.x)
