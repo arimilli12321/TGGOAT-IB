@@ -4,10 +4,11 @@ public class enemyScript : MonoBehaviour
 {
     private Transform player;
     [SerializeField] private GameObject attack;
-    private float timer = 0f;
+    public float timer = 0f;
     [SerializeField] public int movement = 0;
     [SerializeField] public string direction_ = "none";
     [SerializeField] public Vector3 rotatePoint = Vector3.zero;
+    public spawnerScript spawnerScript;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -47,8 +48,8 @@ public class enemyScript : MonoBehaviour
                 if (direction_.Equals("clockwise")) transform.RotateAround(rotatePoint, Vector3.back, 90f * Time.deltaTime);
                 else transform.RotateAround(rotatePoint, Vector3.forward, 90f * Time.deltaTime);
                 break;
-        } 
-        if (timer >= 1.5f)
+        }
+        if (timer >= 1.5f + (spawnerScript.enemyCount / 10.0))
         {
             spawnAttack();
             timer = 0f;

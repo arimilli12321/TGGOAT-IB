@@ -8,6 +8,7 @@ TagManager:
   - enemy
   - spawner
   - piece
+  - hole
   layers:
   - Default
   - TransparentFX

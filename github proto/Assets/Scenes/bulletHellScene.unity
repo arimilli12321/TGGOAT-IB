@@ -613,7 +613,7 @@ MonoBehaviour:
   shields: {fileID: 1565356445}
   Slider: {fileID: 788862810}
   sliderValue: 0
-  sliderMaxValue: 0
+  sliderMaxValue: 10
   sliderSprites:
   - {fileID: -7861751477729263599, guid: 53ddad5fc8c99134c8bb0345fbfb08f1, type: 3}
   - {fileID: 5325702585104246511, guid: 6ccfaa7eba096f64695a74673272803e, type: 3}
@@ -2356,6 +2356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: {fileID: 822748877}
+  timer: 0
   movement: 0
   direction_: up
   rotatePoint: {x: 0, y: 0, z: 0}
