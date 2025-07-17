@@ -15,6 +15,7 @@ public class spawnerScript : MonoBehaviour
             enemyCount++;
             GameObject newEnemy = Instantiate(enemy, new Vector3 (Random.Range(-6, 7), Random.Range(-4, 5), -1), Quaternion.identity);
             newEnemy.SetActive(true);
+            newEnemy.GetComponent<enemyScript>().spawnerScript = gameObject.GetComponent<spawnerScript>();
             int enemyType = Random.Range(1, 5);
             if (enemyType == 1 || enemyType == 2 || enemyType == 3) 
             {
@@ -45,13 +46,14 @@ public class spawnerScript : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-        else if (enemyCount < 5)
+        else if (enemyCount < 4)
         {
             timer = 0;
             enemyCount++;
             GameObject newEnemy = Instantiate(enemy, new Vector3 (Random.Range(-6, 7), Random.Range(-4, 5), -1), Quaternion.identity);
             newEnemy.SetActive(true);
-            newEnemy.GetComponent<enemyScript>().timer = 0.7f;
+            newEnemy.GetComponent<enemyScript>().timer = 0.5f;
+            newEnemy.GetComponent<enemyScript>().spawnerScript = gameObject.GetComponent<spawnerScript>();
             int enemyType = Random.Range(1, 5);
             if (enemyType == 1 || enemyType == 2 || enemyType == 3) 
             {
