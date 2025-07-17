@@ -5,7 +5,7 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class ShapeSorting : MonoBehaviour
 {
-    public int score = 0;
+    [SerializeField] controlScript controls;
     [SerializeField] GameObject Big;
     [SerializeField] GameObject Small_corners;
     [SerializeField] GameObject Long_medium;
@@ -79,7 +79,7 @@ public class ShapeSorting : MonoBehaviour
                     {
                         canfollow = false;
                         Big.transform.position = new Vector3(-3.175f, 2.35f, -3);
-                        score += 1;
+                        controls.score += 1;
                     }
                 }
             }
@@ -94,7 +94,7 @@ public class ShapeSorting : MonoBehaviour
                     {
                         canfollow = false;
                         Long_medium.transform.position = new Vector3(-3.98f, -3.475f, -3);
-                        score += 1;
+                        controls.score += 1;
                     }
                 }
             }
@@ -109,7 +109,7 @@ public class ShapeSorting : MonoBehaviour
                     {
                         canfollow = false;
                         Small_corners.transform.position = new Vector3(-1.945f, -1.025f, -3);
-                        score += 1;
+                        controls.score += 1;
                     }
                 }
             }
@@ -124,7 +124,7 @@ public class ShapeSorting : MonoBehaviour
                     {
                         canfollow = false;
                         Big_Vertical.transform.position = new Vector3(1.95f, -2.255f, -3);
-                        score += 1;
+                        controls.score += 1;
                     }
                 }
             }
@@ -139,7 +139,7 @@ public class ShapeSorting : MonoBehaviour
                     {
                         canfollow = false;
                         Thin_long.transform.position = new Vector3(2.76f, 0.62f, -3);
-                        score += 1;
+                        controls.score += 1;
                     }
                 }
             }
@@ -154,7 +154,7 @@ public class ShapeSorting : MonoBehaviour
                     {
                         canfollow = false;
                         Long_small.transform.position = new Vector3(1.7f, 3.55f, -3);
-                        score += 1;
+                        controls.score += 1;
                     }
                 }
             }
@@ -169,7 +169,7 @@ public class ShapeSorting : MonoBehaviour
                     {
                         canfollow = false;
                         Thin_long.transform.position = new Vector3(2.765f, 0.6f, -3);
-                        score += 1;
+                        controls.score += 1;
                     }
                 }
             }
@@ -184,7 +184,7 @@ public class ShapeSorting : MonoBehaviour
                     {
                         canfollow = false;
                         Long_small.transform.position = new Vector3(1.65f, 3.55f, -3);
-                        score += 1;
+                        controls.score += 1;
                     }
                 }
             }
@@ -199,7 +199,7 @@ public class ShapeSorting : MonoBehaviour
                     {
                         canfollow = false;
                         gameObject.transform.position = new Vector3(-0.85f, -3.375f, -3);
-                        score += 1;
+                        controls.score += 1;
                         collider.enabled = false;
                     }
                 }
@@ -215,7 +215,7 @@ public class ShapeSorting : MonoBehaviour
                     {
                         canfollow = false;
                         gameObject.transform.position = new Vector3(4.69f, -3.33f, -3);
-                        score += 1;
+                        controls.score += 1;
                         collider.enabled = false;
                     }
                 }
@@ -231,7 +231,7 @@ public class ShapeSorting : MonoBehaviour
                     {
                         canfollow = false;
                         gameObject.transform.position = new Vector3(3.65f, 3.54f, -3);
-                        score += 1;
+                        controls.score += 1;
                         collider.enabled = false;
                     }
                 }
@@ -247,7 +247,7 @@ public class ShapeSorting : MonoBehaviour
                     {
                         canfollow = false;
                         gameObject.transform.position = new Vector3(5.158f, 3.575f, -3);
-                        score += 1;
+                        controls.score += 1;
                         collider.enabled = false;
                     }
                 }

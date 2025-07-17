@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5b36e3619436cba212ba41535653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  controls: {fileID: 1806383098}
   Big: {fileID: 465594934}
   Small_corners: {fileID: 1897497747}
   Long_medium: {fileID: 1155994937}
@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5b36e3619436cba212ba41535653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  controls: {fileID: 1806383098}
   Big: {fileID: 465594934}
   Small_corners: {fileID: 1897497747}
   Long_medium: {fileID: 1155994937}
@@ -821,7 +821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5b36e3619436cba212ba41535653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  controls: {fileID: 1806383098}
   Big: {fileID: 465594934}
   Small_corners: {fileID: 1897497747}
   Long_medium: {fileID: 1155994937}
@@ -1045,7 +1045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5b36e3619436cba212ba41535653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  controls: {fileID: 1806383098}
   Big: {fileID: 465594934}
   Small_corners: {fileID: 1897497747}
   Long_medium: {fileID: 1155994937}
@@ -1813,7 +1813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5b36e3619436cba212ba41535653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  controls: {fileID: 1806383098}
   Big: {fileID: 465594934}
   Small_corners: {fileID: 1897497747}
   Long_medium: {fileID: 1155994937}
@@ -1996,7 +1996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5b36e3619436cba212ba41535653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  controls: {fileID: 1806383098}
   Big: {fileID: 465594934}
   Small_corners: {fileID: 1897497747}
   Long_medium: {fileID: 1155994937}
@@ -2179,7 +2179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5b36e3619436cba212ba41535653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  controls: {fileID: 1806383098}
   Big: {fileID: 465594934}
   Small_corners: {fileID: 1897497747}
   Long_medium: {fileID: 1155994937}
@@ -3249,7 +3249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5b36e3619436cba212ba41535653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  controls: {fileID: 1806383098}
   Big: {fileID: 465594934}
   Small_corners: {fileID: 1897497747}
   Long_medium: {fileID: 1155994937}
@@ -3359,6 +3359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfea2e6ad1820a643911dd10f834499c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   moving: 0
   camera_: {fileID: 519420028}
   canGo: right
@@ -3481,7 +3482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5b36e3619436cba212ba41535653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  controls: {fileID: 1806383098}
   Big: {fileID: 465594934}
   Small_corners: {fileID: 1897497747}
   Long_medium: {fileID: 1155994937}
@@ -3664,7 +3665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5b36e3619436cba212ba41535653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  controls: {fileID: 1806383098}
   Big: {fileID: 465594934}
   Small_corners: {fileID: 1897497747}
   Long_medium: {fileID: 1155994937}

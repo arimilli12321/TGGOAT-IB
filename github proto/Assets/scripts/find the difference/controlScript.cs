@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class controlScript : MonoBehaviour
 {
+    public int score = 0;
     public bool moving = false;
     [SerializeField] private GameObject camera_;
     public string canGo = "right";
