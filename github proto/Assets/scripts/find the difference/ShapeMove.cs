@@ -79,7 +79,7 @@ public class ShapeSorting : MonoBehaviour
         {
             following = false;
             cursorCheckScript.draggedObject = null;
-            transform.position = new Vector3(transform.position.x, transform.position.y, -4);
+            transform.position = new Vector3(transform.position.x, transform.position.y, -3);
         }
     }
     void OnTriggerStay2D(Collider2D collider)
