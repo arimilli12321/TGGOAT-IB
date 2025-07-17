@@ -169,6 +169,7 @@ public class ShapeSorting : MonoBehaviour
                     {
                         canfollow = false;
                         Thin_long.transform.position = new Vector3(2.765f, 0.6f, -3);
+                        score += 1;
                     }
                 }
             }
