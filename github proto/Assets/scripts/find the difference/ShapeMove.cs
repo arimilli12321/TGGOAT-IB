@@ -1,9 +1,11 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class ShapeSorting : MonoBehaviour
 {
+    public int score = 0;
     [SerializeField] GameObject Big;
     [SerializeField] GameObject Small_corners;
     [SerializeField] GameObject Long_medium;
@@ -28,7 +30,7 @@ public class ShapeSorting : MonoBehaviour
             mouseScreenPos = Mouse.current.position.ReadValue();
             mouseScreenPos.z = Camera.main.nearClipPlane + 1;
             transform.position = Camera.main.ScreenToWorldPoint(mouseScreenPos);
-            transform.position = new Vector3(transform.position.x, transform.position.y, -2);
+            transform.position = new Vector3(transform.position.x, transform.position.y, -4);
             if (transform.position.x > 8.6 + Camera.main.transform.position.x)
             {
                 transform.position = new Vector3(8.6f + Camera.main.transform.position.x, transform.position.y, transform.position.z);
@@ -62,7 +64,7 @@ public class ShapeSorting : MonoBehaviour
         {
             following = false;
             cursorCheckScript.draggedObject = null;
-            transform.position = new Vector3(transform.position.x, transform.position.y, -1);
+            transform.position = new Vector3(transform.position.x, transform.position.y, -4);
         }
     }
     void OnTriggerStay2D(Collider2D collider)
@@ -76,7 +78,8 @@ public class ShapeSorting : MonoBehaviour
                     if (canfollow == true)
                     {
                         canfollow = false;
-                        Big.transform.position = new Vector3(-3.175f, 2.35f, -1);
+                        Big.transform.position = new Vector3(-3.175f, 2.35f, -3);
+                        score += 1;
                     }
                 }
             }
@@ -90,7 +93,8 @@ public class ShapeSorting : MonoBehaviour
                     if (canfollow == true)
                     {
                         canfollow = false;
-                        Long_medium.transform.position = new Vector3(-3.98f, -3.475f, -1);
+                        Long_medium.transform.position = new Vector3(-3.98f, -3.475f, -3);
+                        score += 1;
                     }
                 }
             }
@@ -104,7 +108,8 @@ public class ShapeSorting : MonoBehaviour
                     if (canfollow == true)
                     {
                         canfollow = false;
-                        Small_corners.transform.position = new Vector3(-1.945f, -1.025f, -1);
+                        Small_corners.transform.position = new Vector3(-1.945f, -1.025f, -3);
+                        score += 1;
                     }
                 }
             }
@@ -118,7 +123,8 @@ public class ShapeSorting : MonoBehaviour
                     if (canfollow == true)
                     {
                         canfollow = false;
-                        Big_Vertical.transform.position = new Vector3(1.95f, -2.255f, -1);
+                        Big_Vertical.transform.position = new Vector3(1.95f, -2.255f, -3);
+                        score += 1;
                     }
                 }
             }
@@ -132,7 +138,8 @@ public class ShapeSorting : MonoBehaviour
                     if (canfollow == true)
                     {
                         canfollow = false;
-                        Thin_long.transform.position = new Vector3(2.76f, 0.62f, -1);
+                        Thin_long.transform.position = new Vector3(2.76f, 0.62f, -3);
+                        score += 1;
                     }
                 }
             }
@@ -146,7 +153,101 @@ public class ShapeSorting : MonoBehaviour
                     if (canfollow == true)
                     {
                         canfollow = false;
-                        Long_small.transform.position = new Vector3(1.7f, 3.55f, 0);
+                        Long_small.transform.position = new Vector3(1.7f, 3.55f, -3);
+                        score += 1;
+                    }
+                }
+            }
+        }
+        if (collider.gameObject.name == "LongThinCollider")
+        {
+            if (gameObject.name == "Long thin")
+            {
+                if (canfollow == true)
+                {
+                    if (following == false)
+                    {
+                        canfollow = false;
+                        Thin_long.transform.position = new Vector3(2.765f, 0.6f, -3);
+                    }
+                }
+            }
+        }
+        if (collider.gameObject.name == "LongSmallCollider")
+        {
+            if (gameObject.name == "long small")
+            {
+                if (canfollow == true)
+                {
+                    if (following == false)
+                    {
+                        canfollow = false;
+                        Long_small.transform.position = new Vector3(1.65f, 3.55f, -3);
+                        score += 1;
+                    }
+                }
+            }
+        }
+        if (collider.gameObject.name == "NCC1")
+        {
+            if (gameObject.name == "No corners")
+            {
+                if (canfollow == true)
+                {
+                    if (following == false)
+                    {
+                        canfollow = false;
+                        gameObject.transform.position = new Vector3(-0.85f, -3.375f, -3);
+                        score += 1;
+                        collider.enabled = false;
+                    }
+                }
+            }
+        }
+        if (collider.gameObject.name == "NCC2")
+        {
+            if (gameObject.name == "No corners")
+            {
+                if (canfollow == true)
+                {
+                    if (following == false)
+                    {
+                        canfollow = false;
+                        gameObject.transform.position = new Vector3(4.69f, -3.33f, -3);
+                        score += 1;
+                        collider.enabled = false;
+                    }
+                }
+            }
+        }
+        if (collider.gameObject.name == "NCC4")
+        {
+            if (gameObject.name == "No corners")
+            {
+                if (canfollow == true)
+                {
+                    if (following == false)
+                    {
+                        canfollow = false;
+                        gameObject.transform.position = new Vector3(3.65f, 3.54f, -3);
+                        score += 1;
+                        collider.enabled = false;
+                    }
+                }
+            }
+        }
+        if (collider.gameObject.name == "NCC3")
+        {
+            if (gameObject.name == "No corners")
+            {
+                if (canfollow == true)
+                {
+                    if (following == false)
+                    {
+                        canfollow = false;
+                        gameObject.transform.position = new Vector3(5.158f, 3.575f, -3);
+                        score += 1;
+                        collider.enabled = false;
                     }
                 }
             }

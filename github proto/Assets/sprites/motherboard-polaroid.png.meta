@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      motherboard-polaroid_0: 823711289414230417
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
