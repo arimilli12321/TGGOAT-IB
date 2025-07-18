@@ -12,6 +12,8 @@ public class playerScript : MonoBehaviour
     [SerializeField] private GameObject Slider;
     public int sliderValue, sliderMaxValue;
     [SerializeField] private List<Sprite> sliderSprites;
+    [SerializeField] private GameObject spawner;
+    [SerializeField] private GameObject startGame;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -41,18 +43,34 @@ public class playerScript : MonoBehaviour
             {
                 Destroy(gameObj);
             }
-            Destroy(shields.gameObject);
+            shields.gameObject.SetActive(false);
             loseText.SetActive(true);
             loseButton.SetActive(true);
             if (sliderValue == sliderMaxValue) winText.SetActive(false);
-            GameObject.FindGameObjectWithTag("spawner").SetActive(false);
+            spawner.SetActive(false);
             gameObject.SetActive(false);
         }
     }
 
     public void Reset()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        startGame.SetActive(false);
+        loseText.SetActive(false);
+        loseButton.SetActive(false);
+        shields.gameObject.SetActive(true);
+        shields.position = Vector3.zero;
+        shields.Find("shield").GetComponent<shieldScript>().regenerateCooldown = 0;
+        shields.Find("shield 2").GetComponent<shieldScript>().regenerateCooldown = 0;
+        gameObject.SetActive(true);
+        transform.position = Vector3.zero;
+        Slider.SetActive(true);
+        sliderValue = 0;
+        changeSliderValue();
+        spawner.SetActive(true);
+        spawner.GetComponent<spawnerScript>().spawnEnemy();
+        spawner.GetComponent<spawnerScript>().spawnEnemy();
+        spawner.GetComponent<spawnerScript>().spawnEnemy();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void changeSliderValue()

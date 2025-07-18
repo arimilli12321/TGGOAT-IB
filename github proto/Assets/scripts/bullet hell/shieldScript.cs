@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class shieldScript : MonoBehaviour
 {
-    private float regenerateCooldown = 0;
+    public float regenerateCooldown = 0;
     [SerializeField] private SpriteRenderer disabledSprite;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject winText;
