@@ -12,6 +12,7 @@ public class BallControl : MonoBehaviour
     private bool isForward = false;
     public int shots = 5;
     [SerializeField] public TMP_Text shotsText;
+    [SerializeField] private TMP_Text tutorialText;
     [SerializeField] private GameObject loseUI, winUi;
 
     void Update()
@@ -108,6 +109,7 @@ public class BallControl : MonoBehaviour
         foreach (GameObject gameObj in GameObject.FindGameObjectsWithTag("hole")) Destroy(gameObj);
         foreach (GameObject gameObj in GameObject.FindGameObjectsWithTag("Finish")) Destroy(gameObj);
         shotsText.gameObject.SetActive(false);
+        tutorialText.gameObject.SetActive(false);
         winUi.SetActive(true);
         gameObject.SetActive(false);
     }
