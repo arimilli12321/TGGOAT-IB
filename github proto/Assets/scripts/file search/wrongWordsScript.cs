@@ -10,6 +10,11 @@ public class wrongWordsScript : MonoBehaviour
             if (guessScirpt.isGuessing)
             {
                 transform.Find("right sprite").gameObject.SetActive(true);
+                guessScirpt.mistakesFound++;
+                if (guessScirpt.mistakesFound == 2)
+                {
+                    // winning yipee
+                }
             }
         }
     }

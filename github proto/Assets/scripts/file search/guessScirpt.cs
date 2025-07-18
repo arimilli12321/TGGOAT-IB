@@ -3,6 +3,7 @@ using UnityEngine;
 public class guessScirpt : MonoBehaviour
 {
     public bool isGuessing = false;
+    public int mistakesFound = 0;
 
     void Update()
     {
