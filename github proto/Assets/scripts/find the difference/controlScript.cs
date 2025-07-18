@@ -11,7 +11,7 @@ public class controlScript : MonoBehaviour
     public void moveRight()
     {
         camera_.transform.DOMove(new Vector3(22, 8.5f, -10), 3f).SetEase(Ease.InOutCubic).OnComplete(() => movingfalse());
-        transform.position = new Vector3(20.5f, 8.5f, transform.position.z);
+        transform.position = new Vector3(21f, 8.5f, transform.position.z);
         moving = true;
         canGo = "left"; 
     }
