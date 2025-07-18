@@ -12,17 +12,9 @@ public class powerScript : MonoBehaviour
         if (timer < 1.5f && clicked)
         {
             if (ball.GetComponent<BallControl>().enabled) ball.GetComponent<BallControl>().enabled = false;
-            if (ball.transform.Find("power 1").GetComponent<SpriteRenderer>().enabled)
+            if (ball.transform.Find("power sprite").GetComponent<SpriteRenderer>().enabled)
             {
-                ball.transform.Find("power 1").GetComponent<SpriteRenderer>().enabled = false;
-            }
-            if (ball.transform.Find("power 2").GetComponent<SpriteRenderer>().enabled)
-            {
-                ball.transform.Find("power 2").GetComponent<SpriteRenderer>().enabled = false;
-            }
-            if (ball.transform.Find("power 3").GetComponent<SpriteRenderer>().enabled)
-            {
-                ball.transform.Find("power 3").GetComponent<SpriteRenderer>().enabled = false;
+                ball.transform.Find("power sprite").GetComponent<SpriteRenderer>().enabled = false;
             }
             if (ball.transform.Find("direction sprite").GetComponent<SpriteRenderer>().enabled)
             {
@@ -38,9 +30,7 @@ public class powerScript : MonoBehaviour
         else if (timer >= 1.7f)
         {
             ball.GetComponent<BallControl>().enabled = true;
-            ball.transform.Find("power 1").GetComponent<SpriteRenderer>().enabled = true;
-            ball.transform.Find("power 2").GetComponent<SpriteRenderer>().enabled = true;
-            ball.transform.Find("power 3").GetComponent<SpriteRenderer>().enabled = true;
+            ball.transform.Find("power sprite").GetComponent<SpriteRenderer>().enabled = true;
             if (ball.GetComponent<BallControl>().showDirection)
             {
                 ball.transform.Find("direction sprite").GetComponent<SpriteRenderer>().enabled = true;
