@@ -14,6 +14,7 @@ public class textScript : MonoBehaviour
 
     void Start()
     {
+        currentText = PlayerPrefs.GetInt("currentText");
         changeText(texts[currentText]);
     }
 
