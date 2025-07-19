@@ -635,6 +635,8 @@ MonoBehaviour:
   - .....
   - 
   - 1
+  textBox: {fileID: 1867499474}
+  background: {fileID: 780392132}
 --- !u!4 &1499222707
 Transform:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 using UnityEngine.TextCore.Text;
 
 public class textScript : MonoBehaviour
@@ -14,6 +15,7 @@ public class textScript : MonoBehaviour
     private Coroutine typeWriterCoroutine_;
     private bool isExpanding = false;
     private char character;
+    [SerializeField] private GameObject textBox, background;
 
     void Start()
     {
@@ -32,19 +34,35 @@ public class textScript : MonoBehaviour
                 changeText(texts[currentText]);
                 if (texts[currentText + 1].Equals("1"))
                 {
-                    SceneManager.LoadScene(2);
+                    textBox.SetActive(false);
+                    background.transform.DOScale(new Vector3(4, 4, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
+                    {
+                        SceneManager.LoadScene(2);
+                    });
                 }
                 else if (texts[currentText + 1].Equals("2"))
                 {
-                    SceneManager.LoadScene(3);
+                    textBox.SetActive(false);
+                    background.transform.DOScale(new Vector3(4, 4, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
+                    {
+                        SceneManager.LoadScene(3);
+                    });            
                 }
                 else if (texts[currentText + 1].Equals("3"))
                 {
-                    SceneManager.LoadScene(4);
+                    textBox.SetActive(false);
+                    background.transform.DOScale(new Vector3(4, 4, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
+                    {
+                        SceneManager.LoadScene(4);
+                    });             
                 }
                 else if (texts[currentText + 1].Equals("4"))
                 {
-                    SceneManager.LoadScene(5);
+                    textBox.SetActive(false);
+                    background.transform.DOScale(new Vector3(4, 4, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
+                    {
+                        SceneManager.LoadScene(5);
+                    });
                 }
             }
         }
