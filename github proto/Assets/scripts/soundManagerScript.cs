@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 public class soundManagerScript : MonoBehaviour
 {
     [SerializeField] private List<AudioClip> musicClips = new List<AudioClip>(), sfxClips = new List<AudioClip>();
-    [SerializeField] private AudioSource music, sfx;
+    [SerializeField] public AudioSource music, sfx;
     void Start()
     {
         DontDestroyOnLoad(gameObject);
