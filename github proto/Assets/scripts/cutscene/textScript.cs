@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.TextCore.Text;
 
 public class textScript : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class textScript : MonoBehaviour
     private int currentVisibleCharIndex;
     private Coroutine typeWriterCoroutine_;
     private bool isExpanding = false;
+    private char character;
 
     void Start()
     {
@@ -22,15 +25,27 @@ public class textScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !isExpanding)
         {
-            if (text.text == "")
-            {
-                // code that runs when the last line of text is passed and the cutscene ends
-            }
-            else
+            if (text.text != "")
             {
                 text.text = "";
                 currentText++;
                 changeText(texts[currentText]);
+                if (texts[currentText + 1].Equals("1"))
+                {
+                    SceneManager.LoadScene(2);
+                }
+                else if (texts[currentText + 1].Equals("2"))
+                {
+                    SceneManager.LoadScene(3);
+                }
+                else if (texts[currentText + 1].Equals("3"))
+                {
+                    SceneManager.LoadScene(4);
+                }
+                else if (texts[currentText + 1].Equals("4"))
+                {
+                    SceneManager.LoadScene(5);
+                }
             }
         }
         else if (Input.GetMouseButtonDown(0))
@@ -48,10 +63,11 @@ public class textScript : MonoBehaviour
         {
             if (currentVisibleCharIndex < text.text.Length)
             {
-                char character = textinfo.characterInfo[currentVisibleCharIndex].character;
+                character = textinfo.characterInfo[currentVisibleCharIndex].character;
             }
+            if (character.Equals('.')) yield return new WaitForSeconds(0.7f);
+            else yield return new WaitForSeconds(1 / 30f);
             text.maxVisibleCharacters++;
-            yield return new WaitForSeconds(1 / 30f);
             currentVisibleCharIndex++;
         }
         isExpanding = false;
