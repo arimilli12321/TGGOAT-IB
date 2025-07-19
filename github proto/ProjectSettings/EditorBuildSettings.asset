@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/main menu.unity
     guid: b9e34934ecc28dc4a973308d6394adc1
   - enabled: 1
+    path: Assets/Scenes/cutsceneScene.unity
+    guid: ff6a9793ed59c2649b020dbef0df6405
+  - enabled: 1
     path: Assets/Scenes/FindTheDifference.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
