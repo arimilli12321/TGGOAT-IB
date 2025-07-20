@@ -27,7 +27,7 @@ public class spawnerScript : MonoBehaviour
         newEnemy.SetActive(true);
         newEnemy.GetComponent<enemyScript>().spawnerScript = gameObject.GetComponent<spawnerScript>();
         int enemyType = Random.Range(1, 5);
-        if (enemyType == 1 || enemyType == 2 || enemyType == 3) 
+        if (enemyType == 1 || enemyType == 2 || enemyType == 3)
         {
             newEnemy.GetComponent<enemyScript>().movement = 1;
             int newDirection = Random.Range(1, 5);
@@ -40,13 +40,30 @@ public class spawnerScript : MonoBehaviour
         {
             newEnemy.GetComponent<enemyScript>().movement = 2;
             int newDirection = Random.Range(1, 5);
-            if (newDirection == 1) newEnemy.GetComponent<enemyScript>().rotatePoint = new Vector3(2, 0, 0) + newEnemy.transform.position;
-            else if (newDirection == 2) newEnemy.GetComponent<enemyScript>().rotatePoint = new Vector3(-2, 0, 0) + newEnemy.transform.position;
-            else if (newDirection == 3) newEnemy.GetComponent<enemyScript>().rotatePoint = new Vector3(0, 2, 0) + newEnemy.transform.position;
-            else if (newDirection == 4) newEnemy.GetComponent<enemyScript>().rotatePoint = new Vector3(0, -2, 0) + newEnemy.transform.position;
+            if (newDirection == 1)
+            {
+                newEnemy.transform.position = new Vector3(Random.Range(-4, 3), Random.Range(-2, 3), -1);
+                newEnemy.GetComponent<enemyScript>().rotatePoint = new Vector3(2, 0, 0) + newEnemy.transform.position;
+            }
+            else if (newDirection == 2)
+            {
+                newEnemy.transform.position = new Vector3(Random.Range(-2, 5), Random.Range(-2, 3), -1);
+                newEnemy.GetComponent<enemyScript>().rotatePoint = new Vector3(-2, 0, 0) + newEnemy.transform.position;
+            }
+            else if (newDirection == 3)
+            {
+                newEnemy.transform.position = new Vector3(Random.Range(-6, 7), Random.Range(-2, 1), -1);
+                newEnemy.GetComponent<enemyScript>().rotatePoint = new Vector3(0, 2, 0) + newEnemy.transform.position;
+            }
+            else if (newDirection == 4)
+            {
+                newEnemy.transform.position = new Vector3(Random.Range(-6, 7), Random.Range(0, 3), -1);
+                newEnemy.GetComponent<enemyScript>().rotatePoint = new Vector3(0, -2, 0) + newEnemy.transform.position;
+            } 
             newDirection = Random.Range(1, 3);
             if (newDirection == 1) newEnemy.GetComponent<enemyScript>().direction_ = "clockwise";
             else if (newDirection == 2) newEnemy.GetComponent<enemyScript>().direction_ = "counterclockwise";
+            
         }
     }
 }
