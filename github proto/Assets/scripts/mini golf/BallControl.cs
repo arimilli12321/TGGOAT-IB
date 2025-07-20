@@ -18,6 +18,12 @@ public class BallControl : MonoBehaviour
 
     void Start()
     {
+        if (GameObject.FindGameObjectsWithTag("soundManager").Length == 2) {
+            foreach (GameObject gameObj in GameObject.FindGameObjectsWithTag("soundManager"))
+            {
+                if (gameObj.transform.position.y == 0) Destroy(gameObj);
+            }
+        }
         soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<soundManagerScript>();
     }
 
@@ -108,6 +114,7 @@ public class BallControl : MonoBehaviour
     public void lose()
     {
         soundManager.playSfxClip(6);
+        soundManager.transform.position = new Vector3(0, 0.1f, 0);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -115,10 +122,5 @@ public class BallControl : MonoBehaviour
     {
         PlayerPrefs.SetInt("currentText", 9);
         SceneManager.LoadScene(1);
-    }
-
-    public void Reset()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
