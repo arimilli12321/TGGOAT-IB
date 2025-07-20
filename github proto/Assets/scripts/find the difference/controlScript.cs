@@ -3,6 +3,7 @@ using DG.Tweening;
 using Microsoft.Win32.SafeHandles;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class controlScript : MonoBehaviour
 {
@@ -40,6 +41,11 @@ public class controlScript : MonoBehaviour
             transform.position = new Vector3(0, 0, -10);
             moving = true;
             zoomed = false;
+        }
+        if (score == 10)
+        {
+            PlayerPrefs.SetInt("currentText", 6);
+            SceneManager.LoadScene(1);
         }
     }
     public void move()
