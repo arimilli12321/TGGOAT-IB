@@ -27,6 +27,7 @@ public class BallControl : MonoBehaviour
             }
         }
         soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<soundManagerScript>();
+        soundManager.playMusicClip(2);
     }
 
     void Update()

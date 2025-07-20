@@ -1028,7 +1028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &635169791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2368,6 +2368,7 @@ MonoBehaviour:
   player: {fileID: 635169789}
   winText: {fileID: 1092608548}
   spawnerScript: {fileID: 1153288179}
+  soundManager: {fileID: 0}
 --- !u!61 &1577482606
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2875,6 +2876,7 @@ MonoBehaviour:
   player: {fileID: 635169789}
   winText: {fileID: 1092608548}
   spawnerScript: {fileID: 1153288179}
+  soundManager: {fileID: 0}
 --- !u!1 &2050357680
 GameObject:
   m_ObjectHideFlags: 0

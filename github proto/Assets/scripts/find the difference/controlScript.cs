@@ -15,6 +15,14 @@ public class controlScript : MonoBehaviour
     public bool moving = false;
     [SerializeField] private GameObject camera_;
     public bool zoomed = false;
+    private soundManagerScript soundManager;
+
+    void Start()
+    {
+        soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<soundManagerScript>();
+        soundManager.playMusicClip(2);
+    }
+
     public void Update()
     {
         camera_.transform.position = new Vector3(Mathf.Clamp(camera_.transform.position.x, leftlimit, rightlimit), Mathf.Clamp(camera_.transform.position.y, bottomlimit, toplimit), camera_.transform.position.z);

@@ -4,6 +4,13 @@ public class guessScirpt : MonoBehaviour
 {
     public bool isGuessing = false;
     public int mistakesFound = 0;
+    private soundManagerScript soundManager;
+
+    void Start()
+    {
+        soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<soundManagerScript>();
+        soundManager.playMusicClip(2);
+    }
 
     void Update()
     {

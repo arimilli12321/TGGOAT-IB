@@ -24,10 +24,11 @@ public class soundManagerScript : MonoBehaviour
         {
             title.volume = 0;
             title.mute = false;
-            if (playing.Equals(" ")) {
+            if (playing.Equals(" "))
+            {
                 title.volume = 0.5f;
                 StartCoroutine(fadeIn(title, 0, 0.5f));
-            } 
+            }
             else StartCoroutine(fadeIn(title, 1f));
             title.Play();
             if (playing.Equals("main")) StartCoroutine(fadeOut(main));
@@ -70,6 +71,7 @@ public class soundManagerScript : MonoBehaviour
             else if (playing.Equals("main")) StartCoroutine(fadeOut(main));
             game.mute = false;
             playing = "game";
+            StartCoroutine(fadeIn(game, 1f));
         }
     }
 

@@ -19,6 +19,13 @@ public class playerScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<soundManagerScript>();
+        gameObject.SetActive(true);
+        while (gameObject == null)
+        {
+
+        }
+        soundManager.playMusicClip(2);
+        gameObject.SetActive(false);
     }
 
     void Update()
@@ -56,6 +63,8 @@ public class playerScript : MonoBehaviour
 
     public void Reset()
     {
+        gameObject.SetActive(true);
+        transform.position = Vector3.zero;
         startGame.SetActive(false);
         loseText.SetActive(false);
         loseButton.SetActive(false);
@@ -67,9 +76,7 @@ public class playerScript : MonoBehaviour
         {
             //nothing
         }
-        shields.Find("shield").GetComponent<shieldScript>().soundManager.playSfxClip(15);
-        gameObject.SetActive(true);
-        transform.position = Vector3.zero;
+        soundManager.playSfxClip(15);
         Slider.SetActive(true);
         sliderValue = 0;
         changeSliderValue();
