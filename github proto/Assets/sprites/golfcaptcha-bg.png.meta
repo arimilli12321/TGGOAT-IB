@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      golfcaptcha-bg_0: 3960306516701580193
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

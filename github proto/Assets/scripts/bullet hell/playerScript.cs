@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class playerScript : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private Vector3 mouseScreenPos;
+    public Vector3 mouseScreenPos;
     [SerializeField] private GameObject loseText, winText, loseButton;
     [SerializeField] private Transform shields;
     [SerializeField] private GameObject Slider;
