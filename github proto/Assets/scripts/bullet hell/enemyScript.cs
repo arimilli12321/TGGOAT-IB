@@ -9,9 +9,11 @@ public class enemyScript : MonoBehaviour
     [SerializeField] public string direction_ = "none";
     [SerializeField] public Vector3 rotatePoint = Vector3.zero;
     public spawnerScript spawnerScript;
+    private soundManagerScript soundManager;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<soundManagerScript>();
     }
 
     void Update()
@@ -59,6 +61,9 @@ public class enemyScript : MonoBehaviour
 
     private void spawnAttack ()
     {
+        int random = Random.Range(1, 3);
+        if (random == 1) soundManager.playSfxClip(13);
+        else soundManager.playSfxClip(14);
         GameObject newAttack = Instantiate(attack, transform.position, transform.rotation);
         newAttack.SetActive(true);
     }

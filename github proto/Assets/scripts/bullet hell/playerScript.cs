@@ -67,10 +67,10 @@ public class playerScript : MonoBehaviour
         sliderValue = 0;
         changeSliderValue();
         spawner.SetActive(true);
+        spawner.GetComponent<spawnerScript>().enemyCount = 0;
         spawner.GetComponent<spawnerScript>().spawnEnemy();
         spawner.GetComponent<spawnerScript>().spawnEnemy();
         spawner.GetComponent<spawnerScript>().spawnEnemy();
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void changeSliderValue()

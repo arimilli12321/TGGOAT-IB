@@ -9,6 +9,13 @@ public class shieldScript : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject winText;
     [SerializeField] private spawnerScript spawnerScript;
+    private soundManagerScript soundManager;
+
+    void Start()
+    {
+        soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<soundManagerScript>();
+    }
+
     void Update()
     {
         transform.RotateAround(player.transform.position, Vector3.forward, -150f * Time.deltaTime);
@@ -30,6 +37,7 @@ public class shieldScript : MonoBehaviour
             player.GetComponent<playerScript>().sliderValue += 1;
             player.GetComponent<playerScript>().changeSliderValue();
             spawnerScript.enemyCount--;
+            soundManager.playSfxClip(7);
             if (player.GetComponent<playerScript>().sliderValue == player.GetComponent<playerScript>().sliderMaxValue)
             {
                 PlayerPrefs.SetInt("currentText", 15);

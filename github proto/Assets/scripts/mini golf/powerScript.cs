@@ -6,6 +6,12 @@ public class powerScript : MonoBehaviour
     [SerializeField] private GameObject ball;
     private float timer = 0;
     private bool clicked = false;
+    private soundManagerScript soundManager;
+
+    void Start()
+    {
+        soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<soundManagerScript>();
+    }
 
     void Update()
     {
@@ -53,6 +59,9 @@ public class powerScript : MonoBehaviour
             if (!clicked)
             {
                 clicked = true;
+                if (power == 1) soundManager.playSfxClip(5);
+                else if (power == 2) soundManager.playSfxClip(4);
+                else if (power == 3) soundManager.playSfxClip(3);
             }
         }
     }

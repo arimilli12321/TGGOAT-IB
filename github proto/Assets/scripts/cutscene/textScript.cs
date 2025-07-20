@@ -20,6 +20,7 @@ public class textScript : MonoBehaviour
 
     void Start()
     {
+        PlayerPrefs.SetInt("currentText", 0);
         soundManager = GameObject.FindGameObjectWithTag("soundManager");
         soundManager.GetComponent<soundManagerScript>().playMusicClip(1);
         currentText = PlayerPrefs.GetInt("currentText");
@@ -40,7 +41,7 @@ public class textScript : MonoBehaviour
                     textBox.SetActive(false);
                     background.transform.DOScale(new Vector3(4, 4, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
                     {
-                        SceneManager.LoadScene(2);
+                        SceneManager.LoadScene(3);
                     });
                 }
                 else if (texts[currentText + 1].Equals("2"))

@@ -14,6 +14,12 @@ public class BallControl : MonoBehaviour
     [SerializeField] public TMP_Text shotsText;
     [SerializeField] private TMP_Text tutorialText;
     [SerializeField] private GameObject loseUI, winUi;
+    private soundManagerScript soundManager;
+
+    void Start()
+    {
+        soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<soundManagerScript>();
+    }
 
     void Update()
     {
@@ -89,6 +95,10 @@ public class BallControl : MonoBehaviour
         }
         else
         {
+            int random = UnityEngine.Random.Range(1, 4);
+            if (random == 1) soundManager.playSfxClip(0);
+            if (random == 2) soundManager.playSfxClip(1);
+            if (random == 3) soundManager.playSfxClip(2);
             z = transform.rotation.eulerAngles.z;
             if (collider.name.Equals("x Wall")) transform.rotation = Quaternion.Inverse(transform.rotation);
             else transform.rotation = Quaternion.Euler(0, 0, 180 - z);
@@ -97,11 +107,8 @@ public class BallControl : MonoBehaviour
 
     public void lose()
     {
-        foreach (GameObject gameObj in GameObject.FindGameObjectsWithTag("hole")) Destroy(gameObj);
-        foreach (GameObject gameObj in GameObject.FindGameObjectsWithTag("Finish")) Destroy(gameObj);
-        shotsText.gameObject.SetActive(false);
-        loseUI.SetActive(true);
-        gameObject.SetActive(false);
+        soundManager.playSfxClip(6);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void win()
