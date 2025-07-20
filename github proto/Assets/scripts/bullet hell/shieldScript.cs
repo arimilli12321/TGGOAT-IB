@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class shieldScript : MonoBehaviour
@@ -31,18 +32,8 @@ public class shieldScript : MonoBehaviour
             spawnerScript.enemyCount--;
             if (player.GetComponent<playerScript>().sliderValue == player.GetComponent<playerScript>().sliderMaxValue)
             {
-                foreach (GameObject gameObj in GameObject.FindGameObjectsWithTag("attack"))
-                {
-                    Destroy(gameObj);
-                }
-                foreach (GameObject gameObj in GameObject.FindGameObjectsWithTag("enemy"))
-                {
-                    Destroy(gameObj);
-                }
-                player.SetActive(false);
-                GameObject.FindGameObjectWithTag("spawner").SetActive(false);
-                winText.SetActive(true);
-                transform.parent.gameObject.SetActive(false);
+                PlayerPrefs.SetInt("currentText", 15);
+                SceneManager.LoadScene(1);
             }
             transform.Find("sprite").GetComponent<SpriteRenderer>().enabled = false;
             disabledSprite.gameObject.SetActive(true);

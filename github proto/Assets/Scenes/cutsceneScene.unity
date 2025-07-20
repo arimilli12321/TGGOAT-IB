@@ -632,9 +632,21 @@ MonoBehaviour:
   - this is a sentance that is being said by a character, it helps move the plot
   - this is a different sentance that is being said by a different character
   - aaaaaaaaaaaaaaaaaaaaaaaaaaaa
-  - .....
+  - enter motherboard
   - 
   - 1
+  - motherboard fixed, enter
+  - 
+  - 2
+  - game two won, entering game three
+  - 
+  - 3
+  - game three won, entering game four
+  - 
+  - 4
+  - you are winner!
+  - 
+  - 5
   textBox: {fileID: 1867499474}
   background: {fileID: 1414746177}
 --- !u!4 &1499222707
