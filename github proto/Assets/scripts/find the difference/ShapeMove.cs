@@ -16,7 +16,7 @@ public class ShapeSorting : MonoBehaviour
     private bool canfollow = true;
     private bool following = false;
     [SerializeField] private cursorCheckScript cursorCheckScript;
-    private float Timer = 0;
+    [SerializeField] private GameObject camera_;
     private soundManagerScript soundManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,15 +31,25 @@ public class ShapeSorting : MonoBehaviour
         {
             mouseScreenPos = Mouse.current.position.ReadValue();
             mouseScreenPos.z = Camera.main.nearClipPlane + 1;
-            if (Camera.main.ScreenToWorldPoint(mouseScreenPos).x <= 3)
-            {
-                GetComponent<Collider2D>().enabled = false;
-                while (Timer < 0.1f) Timer += Time.deltaTime;
-                Timer = 0;
-                GetComponent<Collider2D>().enabled = true;
-            }
             transform.position = Camera.main.ScreenToWorldPoint(mouseScreenPos);
             transform.position = new Vector3(transform.position.x, transform.position.y, -5);
+            if (!controls.zoomed)
+            {
+                if (transform.position.x > 35.5) transform.position = new Vector3(35.5f, transform.position.y, transform.position.z);
+                else if (transform.position.x < -35.5) transform.position = new Vector3(-35.5f, transform.position.y, transform.position.z);
+                if (transform.position.y > 20) transform.position = new Vector3(transform.position.x, 20, transform.position.z);
+                else if (transform.position.y < -20) transform.position = new Vector3(transform.position.x, -20, transform.position.z);
+            }
+            else
+            {
+                float x = transform.position.x;
+                float y = transform.position.y;
+                float z = transform.position.z;
+                if (x > 13 + camera_.transform.position.x) transform.position = new Vector3(13 + camera_.transform.position.x, transform.position.y, z);
+                else if (x < -13 + camera_.transform.position.x) transform.position = new Vector3(-13f + camera_.transform.position.x, transform.position.y, z);
+                if (y > 7.5 + camera_.transform.position.y) transform.position = new Vector3(transform.position.x, 7.5f + camera_.transform.position.y, z);
+                else if (y < -7.5 + camera_.transform.position.y) transform.position = new Vector3(transform.position.x, -7.5f + camera_.transform.position.y, z);
+            }
         }
     }
 
