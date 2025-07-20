@@ -2746,7 +2746,7 @@ Transform:
   m_GameObject: {fileID: 866696759}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.97, y: 3.85, z: -1}
+  m_LocalPosition: {x: 4.26, y: 2.48, z: -1}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3399,7 +3399,6 @@ MonoBehaviour:
   shots: 5
   shotsText: {fileID: 1240014068}
   tutorialText: {fileID: 1717645695}
-  shiftText: {fileID: 0}
   loseUI: {fileID: 228141036}
   winUi: {fileID: 1395403276}
 --- !u!1 &1083398954
@@ -4405,7 +4404,7 @@ Transform:
   m_GameObject: {fileID: 1459206598}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.83, y: 1.07, z: -1}
+  m_LocalPosition: {x: 3.91, y: 1.07, z: -1}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

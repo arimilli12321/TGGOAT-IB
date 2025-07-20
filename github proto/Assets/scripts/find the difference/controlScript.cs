@@ -14,6 +14,12 @@ public class controlScript : MonoBehaviour
     {
         mouseScreenPos = Mouse.current.position.ReadValue();
         mouseScreenPos.z = mouseScreenPos.z = Camera.main.nearClipPlane + 1;
+        if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log(mouseScreenPos);
+            move();
+            moving = false;
+        }
     }
     public void move()
     {
@@ -22,11 +28,6 @@ public class controlScript : MonoBehaviour
         moving = true;
     }
 
-    public void OnMouseDown()
-    {
-        move();
-        moving = false;
-    }
 
     void movingfalse()
     {
