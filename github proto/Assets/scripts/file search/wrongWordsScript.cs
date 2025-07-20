@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class wrongWordsScript : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class wrongWordsScript : MonoBehaviour
                 guessScirpt.mistakesFound++;
                 if (guessScirpt.mistakesFound == 2)
                 {
-                    // winning yipee
+                    PlayerPrefs.SetInt("currentText", 12);
+                    SceneManager.LoadScene(1);
                 }
             }
         }

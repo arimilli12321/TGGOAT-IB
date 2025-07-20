@@ -106,12 +106,8 @@ public class BallControl : MonoBehaviour
 
     private void win()
     {
-        foreach (GameObject gameObj in GameObject.FindGameObjectsWithTag("hole")) Destroy(gameObj);
-        foreach (GameObject gameObj in GameObject.FindGameObjectsWithTag("Finish")) Destroy(gameObj);
-        shotsText.gameObject.SetActive(false);
-        tutorialText.gameObject.SetActive(false);
-        winUi.SetActive(true);
-        gameObject.SetActive(false);
+        PlayerPrefs.SetInt("currentText", 9);
+        SceneManager.LoadScene(1);
     }
 
     public void Reset()
