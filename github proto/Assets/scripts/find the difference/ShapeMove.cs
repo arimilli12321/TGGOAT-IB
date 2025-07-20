@@ -45,21 +45,25 @@ public class ShapeSorting : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (Input.GetMouseButton(0) && (cursorCheckScript.draggedObject == null || cursorCheckScript.draggedObject == gameObject))
+        if (controls.zoomed == true)
         {
-            if (canfollow == true)
+            if (Input.GetMouseButton(0) && (cursorCheckScript.draggedObject == null || cursorCheckScript.draggedObject == gameObject))
             {
-                if (!following) soundManager.playSfxClip(11);
-                following = true;
-                if (cursorCheckScript.draggedObject == null) cursorCheckScript.draggedObject = gameObject;
+                if (canfollow == true)
+                {
+                    if (!following) soundManager.playSfxClip(11);
+                    following = true;
+                    if (cursorCheckScript.draggedObject == null) cursorCheckScript.draggedObject = gameObject;
+                }
             }
+            else if (!Input.GetMouseButton(0))
+            {
+                following = false;
+                cursorCheckScript.draggedObject = null;
+                transform.position = new Vector3(transform.position.x, transform.position.y, -4);
+            }       
         }
-        else if (!Input.GetMouseButton(0))
-        {
-            following = false;
-            cursorCheckScript.draggedObject = null;
-            transform.position = new Vector3(transform.position.x, transform.position.y, -4);
-        }
+
     }
     void OnTriggerStay2D(Collider2D collider)
     {
