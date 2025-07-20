@@ -6,6 +6,10 @@ using UnityEngine.InputSystem;
 
 public class controlScript : MonoBehaviour
 {
+    [SerializeField] float toplimit;
+    [SerializeField] float bottomlimit;
+    [SerializeField] float rightlimit;
+    [SerializeField] float leftlimit;
     private Vector3 mouseScreenPos;
     public int score = 0;
     public bool moving = false;
@@ -13,6 +17,7 @@ public class controlScript : MonoBehaviour
     public bool zoomed = false;
     public void Update()
     {
+        camera_.transform.position = new Vector3(Mathf.Clamp(camera_.transform.position.x, leftlimit, rightlimit), Mathf.Clamp(camera_.transform.position.y, bottomlimit, toplimit), camera_.transform.position.z);
         mouseScreenPos = Mouse.current.position.ReadValue();
         mouseScreenPos.z = mouseScreenPos.z = Camera.main.nearClipPlane + 0;
         if (Input.GetMouseButtonDown(1))
@@ -24,7 +29,6 @@ public class controlScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             camera_.transform.DOMove(new Vector3(0, 0, -10), 1.5f).SetEase(Ease.InOutCubic).OnComplete(() => movingfalse());
-            DOTween.To(() => camera_.GetComponent<Camera>().orthographicSize, x => camera_.GetComponent<Camera>().orthographicSize = x, 20f, 1.5f).SetEase(Ease.InOutCubic);
             transform.position = new Vector3(0, 0, -10);
             moving = true;
             zoomed = false;
