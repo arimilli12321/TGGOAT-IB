@@ -22,6 +22,11 @@ public class logicScript : MonoBehaviour
         settings.SetActive(false);
     }
 
+    public void testSfx()
+    {
+        soundManager.GetComponent<soundManagerScript>().playSfxClip(18);
+    }
+
     public void changeMusicVolume(float newVolume)
     {
         soundManager.GetComponent<soundManagerScript>().music.volume = newVolume;

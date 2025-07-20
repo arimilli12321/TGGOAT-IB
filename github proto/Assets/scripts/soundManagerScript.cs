@@ -10,8 +10,7 @@ public class soundManagerScript : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(gameObject);
-        music.clip = musicClips[0];
-        music.Play();
+        playMusicClip(0);
     }
 
     public void playMusicClip(int clipIndex)
@@ -22,7 +21,6 @@ public class soundManagerScript : MonoBehaviour
 
     public void playSfxClip(int clipIndex)
     {
-        sfx.clip = sfxClips[clipIndex];
-        sfx.Play();
+        sfx.PlayOneShot(sfxClips[clipIndex]);
     }
 }
