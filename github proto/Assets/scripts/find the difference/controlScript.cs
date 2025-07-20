@@ -1,26 +1,31 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class controlScript : MonoBehaviour
 {
+    private Vector3 mouseScreenPos;
     public int score = 0;
     public bool moving = false;
     [SerializeField] private GameObject camera_;
-    public string canGo = "right";
 
-    public void moveRight()
+    public void Update()
     {
-        camera_.transform.DOMove(new Vector3(22, 8.5f, -10), 3f).SetEase(Ease.InOutCubic).OnComplete(() => movingfalse());
-        transform.position = new Vector3(21f, 8.5f, transform.position.z);
-        moving = true;
-        canGo = "left"; 
+        mouseScreenPos = Mouse.current.position.ReadValue();
+        mouseScreenPos.z = mouseScreenPos.z = Camera.main.nearClipPlane + 1;
     }
-    public void moveLeft()
+    public void move()
     {
-        camera_.transform.DOMove(new Vector3(0, 0, -10), 3f).SetEase(Ease.InOutCubic).OnComplete(() => movingfalse());
-        transform.position = new Vector3(0, 0, transform.position.z);
+        camera_.transform.DOMove(mouseScreenPos, 3f).SetEase(Ease.InOutCubic).OnComplete(() => movingfalse());
+        transform.position = mouseScreenPos;
         moving = true;
-        canGo = "right";
+    }
+
+    public void OnMouseDown()
+    {
+        move();
+        moving = false;
     }
 
     void movingfalse()

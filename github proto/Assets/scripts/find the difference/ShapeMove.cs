@@ -30,14 +30,7 @@ public class ShapeSorting : MonoBehaviour
         {
             mouseScreenPos = Mouse.current.position.ReadValue();
             mouseScreenPos.z = Camera.main.nearClipPlane + 1;
-            if (controls.canGo.Equals("right") && Camera.main.ScreenToWorldPoint(mouseScreenPos).x <= 7.5)
-            {
-                GetComponent<Collider2D>().enabled = false;
-                while (Timer < 0.1f) Timer += Time.deltaTime;
-                Timer = 0;
-                GetComponent<Collider2D>().enabled = true;
-            }
-            else if (Camera.main.ScreenToWorldPoint(mouseScreenPos).x <= 3)
+            if (Camera.main.ScreenToWorldPoint(mouseScreenPos).x <= 3)
             {
                 GetComponent<Collider2D>().enabled = false;
                 while (Timer < 0.1f) Timer += Time.deltaTime;
@@ -46,22 +39,6 @@ public class ShapeSorting : MonoBehaviour
             }
             transform.position = Camera.main.ScreenToWorldPoint(mouseScreenPos);
             transform.position = new Vector3(transform.position.x, transform.position.y, -5);
-            if (transform.position.x > 8.6 + Camera.main.transform.position.x)
-            {
-                transform.position = new Vector3(8.6f + Camera.main.transform.position.x, transform.position.y, transform.position.z);
-            }
-            else if (transform.position.x < -8.6 + Camera.main.transform.position.x)
-            {
-                transform.position = new Vector3(-8.6f + Camera.main.transform.position.x, transform.position.y, transform.position.z);
-            }
-            if (transform.position.y > 4.7 + Camera.main.transform.position.y)
-            {
-                transform.position = new Vector3(transform.position.x, 4.7f + Camera.main.transform.position.y, transform.position.z);
-            }
-            else if (transform.position.y < -4.7 + Camera.main.transform.position.y)
-            {
-                transform.position = new Vector3(transform.position.x, -4.7f + Camera.main.transform.position.y, transform.position.z);
-            }
         }
     }
 
@@ -93,7 +70,7 @@ public class ShapeSorting : MonoBehaviour
                     if (canfollow == true)
                     {
                         canfollow = false;
-                        Big.transform.position = new Vector3(-3.175f, 2.35f, -2);
+                        Big.transform.position = new Vector3(-3.484f, 2.765f, -2);
                         controls.score += 1;
                     }
                 }
@@ -108,7 +85,7 @@ public class ShapeSorting : MonoBehaviour
                     if (canfollow == true)
                     {
                         canfollow = false;
-                        Long_medium.transform.position = new Vector3(-3.98f, -3.475f, -2);
+                        Long_medium.transform.position = new Vector3(-4.289f, -3.121f, -2);
                         controls.score += 1;
                     }
                 }
@@ -123,7 +100,7 @@ public class ShapeSorting : MonoBehaviour
                     if (canfollow == true)
                     {
                         canfollow = false;
-                        Small_corners.transform.position = new Vector3(-1.945f, -1.025f, -2);
+                        Small_corners.transform.position = new Vector3(-2.254f, -0.671f, -2);
                         controls.score += 1;
                     }
                 }
@@ -138,7 +115,7 @@ public class ShapeSorting : MonoBehaviour
                     if (canfollow == true)
                     {
                         canfollow = false;
-                        Big_Vertical.transform.position = new Vector3(1.95f, -2.255f, -2);
+                        Big_Vertical.transform.position = new Vector3(1.641f, -1.901f, -2);
                         controls.score += 1;
                     }
                 }
@@ -153,13 +130,13 @@ public class ShapeSorting : MonoBehaviour
                     if (canfollow == true)
                     {
                         canfollow = false;
-                        Thin_long.transform.position = new Vector3(2.76f, 0.62f, -2);
+                        Thin_long.transform.position = new Vector3(2.451f, 0.974f, -2);
                         controls.score += 1;
                     }
                 }
             }
         }
-        if (collider.gameObject.name == "longsmallcollider")
+        if (collider.gameObject.name == "LongSmallCollider")
         {
             if (gameObject.name == "long small")
             {
@@ -168,7 +145,7 @@ public class ShapeSorting : MonoBehaviour
                     if (canfollow == true)
                     {
                         canfollow = false;
-                        Long_small.transform.position = new Vector3(1.7f, 3.55f, -2);
+                        Long_small.transform.position = new Vector3(1.2f, 3.904f, -2);
                         controls.score += 1;
                     }
                 }
@@ -183,22 +160,7 @@ public class ShapeSorting : MonoBehaviour
                     if (following == false)
                     {
                         canfollow = false;
-                        Thin_long.transform.position = new Vector3(2.765f, 0.6f, -2);
-                        controls.score += 1;
-                    }
-                }
-            }
-        }
-        if (collider.gameObject.name == "LongSmallCollider")
-        {
-            if (gameObject.name == "long small")
-            {
-                if (canfollow == true)
-                {
-                    if (following == false)
-                    {
-                        canfollow = false;
-                        Long_small.transform.position = new Vector3(1.65f, 3.55f, -2);
+                        Thin_long.transform.position = new Vector3(2.456f, 0.954f, -2);
                         controls.score += 1;
                     }
                 }
@@ -213,7 +175,7 @@ public class ShapeSorting : MonoBehaviour
                     if (following == false)
                     {
                         canfollow = false;
-                        gameObject.transform.position = new Vector3(-0.85f, -3.375f, -2);
+                        gameObject.transform.position = new Vector3(-0.85f, -3.021f, -2);
                         controls.score += 1;
                         collider.enabled = false;
                     }
@@ -229,7 +191,7 @@ public class ShapeSorting : MonoBehaviour
                     if (following == false)
                     {
                         canfollow = false;
-                        gameObject.transform.position = new Vector3(4.69f, -3.33f, -2);
+                        gameObject.transform.position = new Vector3(4.386f, -2.938f, -2);
                         controls.score += 1;
                         collider.enabled = false;
                     }
@@ -245,7 +207,7 @@ public class ShapeSorting : MonoBehaviour
                     if (following == false)
                     {
                         canfollow = false;
-                        gameObject.transform.position = new Vector3(3.65f, 3.54f, -2);
+                        gameObject.transform.position = new Vector3(3.341f, 3.894f, -2);
                         controls.score += 1;
                         collider.enabled = false;
                     }
@@ -261,7 +223,7 @@ public class ShapeSorting : MonoBehaviour
                     if (following == false)
                     {
                         canfollow = false;
-                        gameObject.transform.position = new Vector3(5.158f, 3.575f, -2);
+                        gameObject.transform.position = new Vector3(4.849f, 3.929f, -2);
                         controls.score += 1;
                         collider.enabled = false;
                     }
