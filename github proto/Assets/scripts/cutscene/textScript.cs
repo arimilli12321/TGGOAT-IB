@@ -16,9 +16,12 @@ public class textScript : MonoBehaviour
     private bool isExpanding = false;
     private char character;
     [SerializeField] private GameObject textBox, background;
+    private GameObject soundManager;
 
     void Start()
     {
+        soundManager = GameObject.FindGameObjectWithTag("soundManager");
+        soundManager.GetComponent<soundManagerScript>().playMusicClip(1);
         currentText = PlayerPrefs.GetInt("currentText");
         changeText(texts[currentText]);
     }

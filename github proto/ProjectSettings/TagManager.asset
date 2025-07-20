@@ -9,6 +9,7 @@ TagManager:
   - spawner
   - piece
   - hole
+  - soundManager
   layers:
   - Default
   - TransparentFX

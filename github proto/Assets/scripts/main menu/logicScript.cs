@@ -29,7 +29,9 @@ public class logicScript : MonoBehaviour
 
     public void changeMusicVolume(float newVolume)
     {
-        soundManager.GetComponent<soundManagerScript>().music.volume = newVolume;
+        soundManager.GetComponent<soundManagerScript>().title.volume = newVolume;
+        soundManager.GetComponent<soundManagerScript>().main.volume = newVolume;
+        soundManager.GetComponent<soundManagerScript>().game.volume = newVolume;
     }
     
     public void changeSfxVolume(float newVolume)
