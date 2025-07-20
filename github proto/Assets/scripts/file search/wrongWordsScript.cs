@@ -19,7 +19,7 @@ public class wrongWordsScript : MonoBehaviour
                 soundManager.playSfxClip(10);
                 transform.Find("right sprite").gameObject.SetActive(true);
                 guessScirpt.mistakesFound++;
-                if (guessScirpt.mistakesFound == 2)
+                if (guessScirpt.mistakesFound == 1)
                 {
                     PlayerPrefs.SetInt("currentText", 12);
                     SceneManager.LoadScene(1);
