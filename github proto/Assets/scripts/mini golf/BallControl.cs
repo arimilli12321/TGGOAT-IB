@@ -2,6 +2,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using DG.Tweening;
 
 public class BallControl : MonoBehaviour
 {
@@ -18,7 +19,8 @@ public class BallControl : MonoBehaviour
 
     void Start()
     {
-        if (GameObject.FindGameObjectsWithTag("soundManager").Length == 2) {
+        if (GameObject.FindGameObjectsWithTag("soundManager").Length == 2)
+        {
             foreach (GameObject gameObj in GameObject.FindGameObjectsWithTag("soundManager"))
             {
                 if (gameObj.transform.position.y == 0) Destroy(gameObj);
