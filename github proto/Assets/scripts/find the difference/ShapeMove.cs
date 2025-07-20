@@ -45,8 +45,6 @@ public class ShapeSorting : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (controls.zoomed == true)
-        {
             if (Input.GetMouseButton(0) && (cursorCheckScript.draggedObject == null || cursorCheckScript.draggedObject == gameObject))
             {
                 if (canfollow == true)
@@ -62,7 +60,6 @@ public class ShapeSorting : MonoBehaviour
                 cursorCheckScript.draggedObject = null;
                 transform.position = new Vector3(transform.position.x, transform.position.y, -4);
             }       
-        }
 
     }
     void OnTriggerStay2D(Collider2D collider)
