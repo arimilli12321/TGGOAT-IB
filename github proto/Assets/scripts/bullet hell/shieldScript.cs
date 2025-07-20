@@ -9,7 +9,7 @@ public class shieldScript : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject winText;
     [SerializeField] private spawnerScript spawnerScript;
-    private soundManagerScript soundManager;
+    public soundManagerScript soundManager;
 
     void Start()
     {

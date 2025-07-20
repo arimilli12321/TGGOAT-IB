@@ -7,23 +7,27 @@ public class logicScript : MonoBehaviour
     [SerializeField] private GameObject nonSettings, settings, soundManager;
     public void startGame()
     {
+        soundManager.GetComponent<soundManagerScript>().playSfxClip(15);
         SceneManager.LoadScene(sceneIndex);
     }
 
     public void openSettings()
     {
+        soundManager.GetComponent<soundManagerScript>().playSfxClip(15);
         nonSettings.SetActive(false);
         settings.SetActive(true);
     }
 
     public void closeSettings()
     {
+        soundManager.GetComponent<soundManagerScript>().playSfxClip(15);
         nonSettings.SetActive(true);
         settings.SetActive(false);
     }
 
     public void testSfx()
     {
+        soundManager.GetComponent<soundManagerScript>().playSfxClip(15);
         soundManager.GetComponent<soundManagerScript>().playSfxClip(18);
     }
 

@@ -14,9 +14,11 @@ public class playerScript : MonoBehaviour
     [SerializeField] private List<Sprite> sliderSprites;
     [SerializeField] private GameObject spawner;
     [SerializeField] private GameObject startGame;
+    private soundManagerScript soundManager;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<soundManagerScript>();
     }
 
     void Update()
@@ -61,6 +63,11 @@ public class playerScript : MonoBehaviour
         shields.position = Vector3.zero;
         shields.Find("shield").GetComponent<shieldScript>().regenerateCooldown = 0;
         shields.Find("shield 2").GetComponent<shieldScript>().regenerateCooldown = 0;
+        while (shields == null)
+        {
+            //nothing
+        }
+        shields.Find("shield").GetComponent<shieldScript>().soundManager.playSfxClip(15);
         gameObject.SetActive(true);
         transform.position = Vector3.zero;
         Slider.SetActive(true);
