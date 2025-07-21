@@ -53,7 +53,8 @@ public class shieldScript : MonoBehaviour
     }
 
     void nextscene() {
-            PlayerPrefs.SetInt("currentText", 10);
-            SceneManager.LoadScene(1);
+        PlayerPrefs.SetFloat("cutsceneCamSize", 0.5f);
+        PlayerPrefs.SetInt("currentText", 10);
+        SceneManager.LoadScene(1);
     }
 }
