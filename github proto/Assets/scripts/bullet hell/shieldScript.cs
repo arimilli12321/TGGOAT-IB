@@ -42,6 +42,9 @@ public class shieldScript : MonoBehaviour
             soundManager.playSfxClip(7);
             if (player.GetComponent<playerScript>().sliderValue == player.GetComponent<playerScript>().sliderMaxValue)
             {
+                foreach (GameObject gameObj in GameObject.FindGameObjectsWithTag("enemy")) gameObj.SetActive(false);
+                foreach (GameObject gameObj in GameObject.FindGameObjectsWithTag("attack")) gameObj.SetActive(false);
+                spawnerScript.enabled = false;
                 DOTween.To(() => cam.GetComponent<Camera>().orthographicSize, x => cam.GetComponent<Camera>().orthographicSize = x, 1f, 1.5f).SetEase(Ease.InOutCubic).OnComplete(() => nextscene());
             }
             transform.Find("sprite").GetComponent<SpriteRenderer>().enabled = false;
