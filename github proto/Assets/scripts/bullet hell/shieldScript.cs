@@ -1,9 +1,11 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class shieldScript : MonoBehaviour
 {
+    [SerializeField] Camera cam;
     public float regenerateCooldown = 0;
     [SerializeField] private SpriteRenderer disabledSprite;
     [SerializeField] private GameObject player;
@@ -40,11 +42,15 @@ public class shieldScript : MonoBehaviour
             soundManager.playSfxClip(7);
             if (player.GetComponent<playerScript>().sliderValue == player.GetComponent<playerScript>().sliderMaxValue)
             {
-                PlayerPrefs.SetInt("currentText", 15);
-                SceneManager.LoadScene(1);
+                DOTween.To(() => cam.GetComponent<Camera>().orthographicSize, x => cam.GetComponent<Camera>().orthographicSize = x, 1f, 1.5f).SetEase(Ease.InOutCubic).OnComplete(() => nextscene());
             }
             transform.Find("sprite").GetComponent<SpriteRenderer>().enabled = false;
             disabledSprite.gameObject.SetActive(true);
         }
+    }
+
+    void nextscene() {
+            PlayerPrefs.SetInt("currentText", 10);
+            SceneManager.LoadScene(1);
     }
 }

@@ -8,9 +8,10 @@ using UnityEngine.TextCore.Text;
 
 public class textScript : MonoBehaviour
 {
+    [SerializeField] Camera cam;
     [SerializeField] private TMP_Text text;
     [SerializeField] private List<string> texts = new List<string>();
-    private int currentText = 0;
+    public int currentText = 0;
     private int currentVisibleCharIndex;
     private Coroutine typeWriterCoroutine_;
     private bool isExpanding = false;
@@ -18,9 +19,28 @@ public class textScript : MonoBehaviour
     [SerializeField] private GameObject textBox, background;
     private GameObject soundManager;
 
+    void Update()
+    {
+        if (currentText == 1)
+        {
+            text.color = Color.orange;
+            text.outlineWidth = 0.15f;
+        }
+            else if (currentText == 6) {
+            DOTween.To(() => cam.GetComponent<Camera>().orthographicSize, x => cam.GetComponent<Camera>().orthographicSize = x, 20f, 1.5f).SetEase(Ease.InOutCubic);
+            cam.GetComponent<Camera>().backgroundColor = new Color(0.227451f, 0.7803922f, 0.6156863f);
+        }
+            else if (currentText == 10) {
+            cam.GetComponent<Camera>().backgroundColor = new Color(0.1607843f, 0.227451f, 0.3568628f);
+        }
+        else
+        {
+            text.color = Color.black;
+            text.outlineWidth = 0;
+        }
+    }
     void Start()
     {
-        PlayerPrefs.SetInt("currentText", 0);
         soundManager = GameObject.FindGameObjectWithTag("soundManager");
         soundManager.GetComponent<soundManagerScript>().playMusicClip(1);
         currentText = PlayerPrefs.GetInt("currentText");
@@ -36,12 +56,13 @@ public class textScript : MonoBehaviour
                 text.text = "";
                 currentText++;
                 changeText(texts[currentText]);
-                if (texts[currentText + 1].Equals("1"))
+                if (texts[currentText + 1] == "1")
                 {
+                    Debug.Log("done"); 
                     textBox.SetActive(false);
                     background.transform.DOScale(new Vector3(1, 1, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
                     {
-                        SceneManager.LoadScene(4);
+                        SceneManager.LoadScene(2);
                     });
                 }
                 else if (texts[currentText + 1].Equals("2"))

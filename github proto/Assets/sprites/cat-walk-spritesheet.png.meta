@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cat-walk-spritesheet_0: 2802627952108658112
+      cat-walk-spritesheet_1: -3956571718086034133
+      cat-walk-spritesheet_2: -5811965419758975950
+      cat-walk-spritesheet_3: 6505600064778622667
+      cat-walk-spritesheet_4: 6823535677942458141
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
