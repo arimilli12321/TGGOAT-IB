@@ -39,9 +39,9 @@ public class textScript : MonoBehaviour
                 if (texts[currentText + 1].Equals("1"))
                 {
                     textBox.SetActive(false);
-                    background.transform.DOScale(new Vector3(4, 4, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
+                    background.transform.DOScale(new Vector3(1, 1, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
                     {
-                        SceneManager.LoadScene(3);
+                        SceneManager.LoadScene(4);
                     });
                 }
                 else if (texts[currentText + 1].Equals("2"))
