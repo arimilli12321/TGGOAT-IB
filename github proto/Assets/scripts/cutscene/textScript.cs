@@ -27,6 +27,11 @@ public class textScript : MonoBehaviour
             text.color = Color.orange;
             text.outlineWidth = 0.15f;
         }
+        else if (currentText != 1)
+        {
+            text.color = Color.black;
+            text.outlineWidth = 0;
+        }
         else if (currentText == 6)
         {
             cam.GetComponent<Camera>().backgroundColor = new Color(0.227451f, 0.7803922f, 0.6156863f);
@@ -34,11 +39,6 @@ public class textScript : MonoBehaviour
         else if (currentText == 10)
         {
             cam.GetComponent<Camera>().backgroundColor = new Color(0.1607843f, 0.227451f, 0.3568628f);
-        }
-        else
-        {
-            text.color = Color.black;
-            text.outlineWidth = 0;
         }
         if (timer > 0) timer -= Time.deltaTime;
         else if (timer != -1)
@@ -101,7 +101,7 @@ public class textScript : MonoBehaviour
                 else if (texts[currentText + 1].Equals("4"))
                 {
                     textBox.SetActive(false);
-                    background.transform.DOScale(new Vector3(0.8f, 0.8f, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
+                    background.transform.DOScale(new Vector3(1f, 1f, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
                     {
                         SceneManager.LoadScene(4);
                     });
@@ -109,18 +109,17 @@ public class textScript : MonoBehaviour
                 else if (texts[currentText + 1].Equals("5"))
                 {
                     textBox.SetActive(false);
-                    background.transform.DOScale(new Vector3(0.6f, 0.6f, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
                     {
                         SceneManager.LoadScene(6);
-                    });
+                    }
                 }
             }
-        }
-        else if (Input.GetMouseButtonDown(0))
-        {
-            StopCoroutine(typeWriterCoroutine_);
-            text.maxVisibleCharacters = text.text.Length;
-            isExpanding = false;
+            else if (Input.GetMouseButtonDown(0))
+            {
+                StopCoroutine(typeWriterCoroutine_);
+                text.maxVisibleCharacters = text.text.Length;
+                isExpanding = false;
+            }
         }
     }
 
