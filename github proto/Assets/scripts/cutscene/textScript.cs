@@ -60,7 +60,7 @@ public class textScript : MonoBehaviour
                 {
                     Debug.Log("done"); 
                     textBox.SetActive(false);
-                    background.transform.DOScale(new Vector3(4, 4, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
+                    background.transform.DOScale(new Vector3(1, 1, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
                     {
                         SceneManager.LoadScene(2);
                     });

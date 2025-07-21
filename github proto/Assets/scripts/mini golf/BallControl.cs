@@ -16,6 +16,7 @@ public class BallControl : MonoBehaviour
     [SerializeField] private TMP_Text tutorialText;
     [SerializeField] private GameObject loseUI, winUi;
     private soundManagerScript soundManager;
+    [SerializeField] private GameObject camera_;
 
     void Start()
     {
@@ -36,19 +37,19 @@ public class BallControl : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
             while (transform.rotation != Quaternion.Euler(0, 0, 0))
-            transform.Find("power 1").position = transform.Find("power 1").position * -1;
+                transform.Find("power 1").position = transform.Find("power 1").position * -1;
             transform.Find("power 1").localPosition = new Vector3(transform.Find("power 1").localPosition.x, transform.Find("power 1").localPosition.y + 3.1f, -2);
             transform.rotation = Quaternion.Euler(0, 0, 0);
             while (transform.rotation != Quaternion.Euler(0, 0, 0))
-            transform.Find("power 2").position = transform.Find("power 2").position * -1;
+                transform.Find("power 2").position = transform.Find("power 2").position * -1;
             transform.Find("power 2").localPosition = new Vector3(transform.Find("power 2").localPosition.x, transform.Find("power 2").localPosition.y + 6.35f, -2);
             transform.rotation = Quaternion.Euler(0, 0, 0);
             while (transform.rotation != Quaternion.Euler(0, 0, 0))
-            transform.Find("power 3").position = transform.Find("power 3").position * -1;
+                transform.Find("power 3").position = transform.Find("power 3").position * -1;
             transform.Find("power 3").localPosition = new Vector3(transform.Find("power 3").localPosition.x, transform.Find("power 3").localPosition.y + 9.65f, -2);
             transform.rotation = Quaternion.Euler(0, 0, 0);
             while (transform.rotation != Quaternion.Euler(0, 0, 0))
-            transform.Find("power sprite").position = transform.Find("power sprite").position * -1;
+                transform.Find("power sprite").position = transform.Find("power sprite").position * -1;
             transform.Find("power sprite").localPosition = new Vector3(transform.Find("power sprite").localPosition.x, transform.Find("power sprite").localPosition.y + 6.4f, -2);
             transform.Find("power sprite").localRotation = quaternion.identity;
             transform.Find("direction sprite").GetComponent<SpriteRenderer>().enabled = false;
@@ -60,19 +61,19 @@ public class BallControl : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
             while (transform.rotation != Quaternion.Euler(0, 0, 0))
-            transform.Find("power 1").position = transform.Find("power 1").position * -1;
+                transform.Find("power 1").position = transform.Find("power 1").position * -1;
             transform.Find("power 1").localPosition = new Vector3(transform.Find("power 1").localPosition.x, transform.Find("power 1").localPosition.y - 3.1f, -2);
             transform.rotation = Quaternion.Euler(0, 0, 0);
             while (transform.rotation != Quaternion.Euler(0, 0, 0))
-            transform.Find("power 2").position = transform.Find("power 2").position * -1;
+                transform.Find("power 2").position = transform.Find("power 2").position * -1;
             transform.Find("power 2").localPosition = new Vector3(transform.Find("power 2").localPosition.x, transform.Find("power 2").localPosition.y - 6.35f, -2);
             transform.rotation = Quaternion.Euler(0, 0, 0);
             while (transform.rotation != Quaternion.Euler(0, 0, 0))
-            transform.Find("power 3").position = transform.Find("power 3").position * -1;
+                transform.Find("power 3").position = transform.Find("power 3").position * -1;
             transform.Find("power 3").localPosition = new Vector3(transform.Find("power 3").localPosition.x, transform.Find("power 3").localPosition.y - 9.65f, -2);
             transform.rotation = Quaternion.Euler(0, 0, 0);
             while (transform.rotation != Quaternion.Euler(0, 0, 0))
-            transform.Find("power sprite").position = transform.Find("power sprite").position * -1;
+                transform.Find("power sprite").position = transform.Find("power sprite").position * -1;
             transform.Find("power sprite").localPosition = new Vector3(transform.Find("power sprite").localPosition.x, transform.Find("power sprite").localPosition.y - 6.4f, -2);
             transform.Find("power sprite").localRotation = new Quaternion(0, 0, 180, 0);
             transform.Find("direction sprite").GetComponent<SpriteRenderer>().enabled = true;
@@ -123,6 +124,11 @@ public class BallControl : MonoBehaviour
 
     private void win()
     {
+        DOTween.To(() => camera_.GetComponent<Camera>().orthographicSize, x => camera_.GetComponent<Camera>().orthographicSize = x, 20f, 1.5f).SetEase(Ease.InOutCubic)
+        .OnComplete(() => loadCutscene());
+    }
+
+    private void loadCutscene() {
         PlayerPrefs.SetInt("currentText", 9);
         SceneManager.LoadScene(1);
     }
