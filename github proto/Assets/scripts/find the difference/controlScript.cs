@@ -44,15 +44,16 @@ public class controlScript : MonoBehaviour
             moving = true;
             zoomed = false;
         }
-        if (score == 10) 
+        if (score == 10 && camera_.GetComponent<Camera>().orthographicSize == 20) 
         { 
             DOTween.To(() => camera_.GetComponent<Camera>().orthographicSize, x => camera_.GetComponent<Camera>().orthographicSize = x, 1f, 1.5f).SetEase(Ease.InOutCubic).OnComplete(() => cutscene());
         }
     }
     void cutscene()
     {
-            PlayerPrefs.SetInt("currentText", 6);
-            SceneManager.LoadScene(1); 
+        PlayerPrefs.SetFloat("cutsceneCamSize", 0.5f);
+        PlayerPrefs.SetInt("currentText", 6);
+        SceneManager.LoadScene(1); 
     }
     public void move()
     {
