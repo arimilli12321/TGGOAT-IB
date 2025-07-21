@@ -134,7 +134,7 @@ public class BallControl : MonoBehaviour
     }
 
     private void loadCutscene() {
-        PlayerPrefs.SetInt("currentText", 9);
+        PlayerPrefs.SetInt("currentText", 19);
         SceneManager.LoadScene(1);
     }
 }
