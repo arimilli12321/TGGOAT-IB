@@ -3,8 +3,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using DG.Tweening;
 public class playerScript : MonoBehaviour
 {
+    [SerializeField] Camera cam;
     private Rigidbody2D rb;
     public Vector3 mouseScreenPos;
     [SerializeField] private GameObject loseText, winText, loseButton;
@@ -17,6 +19,8 @@ public class playerScript : MonoBehaviour
     private soundManagerScript soundManager;
     void Start()
     {
+        cam.GetComponent<Camera>().orthographicSize = 1;
+        DOTween.To(() => cam.GetComponent<Camera>().orthographicSize, x => cam.GetComponent<Camera>().orthographicSize = x, 7.5f, 1.5f).SetEase(Ease.InOutCubic);
         rb = GetComponent<Rigidbody2D>();
         soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<soundManagerScript>();
         gameObject.SetActive(true);

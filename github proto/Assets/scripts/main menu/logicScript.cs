@@ -8,7 +8,8 @@ public class logicScript : MonoBehaviour
     public void startGame()
     {
         soundManager.GetComponent<soundManagerScript>().playSfxClip(15);
-        SceneManager.LoadScene(sceneIndex);
+        PlayerPrefs.SetInt("currentText", 0);
+        SceneManager.LoadScene(1);
     }
 
     public void openSettings()

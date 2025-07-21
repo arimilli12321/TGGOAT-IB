@@ -20,15 +20,16 @@ public class controlScript : MonoBehaviour
 
     void Start()
     {
+        camera_.GetComponent<Camera>().orthographicSize = 1;
+        DOTween.To(() => camera_.GetComponent<Camera>().orthographicSize, x => camera_.GetComponent<Camera>().orthographicSize = x, 20f, 1.5f).SetEase(Ease.InOutCubic);
         soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<soundManagerScript>();
         soundManager.playMusicClip(2);
     }
 
     public void Update()
     {
-        camera_.transform.position = new Vector3(Mathf.Clamp(camera_.transform.position.x, leftlimit, rightlimit), Mathf.Clamp(camera_.transform.position.y, bottomlimit, toplimit), camera_.transform.position.z);
         mouseScreenPos = Mouse.current.position.ReadValue();
-        mouseScreenPos.z = mouseScreenPos.z = Camera.main.nearClipPlane + 0;
+        mouseScreenPos.z = Camera.main.nearClipPlane + 0;
         if (Input.GetMouseButtonDown(1))
         {
             move();
@@ -38,15 +39,20 @@ public class controlScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             camera_.transform.DOMove(new Vector3(0, 0, -10), 1.5f).SetEase(Ease.InOutCubic).OnComplete(() => movingfalse());
+            DOTween.To(() => camera_.GetComponent<Camera>().orthographicSize, x => camera_.GetComponent<Camera>().orthographicSize = x, 20f, 1.5f).SetEase(Ease.InOutCubic);
             transform.position = new Vector3(0, 0, -10);
             moving = true;
             zoomed = false;
         }
         if (score == 10)
-        {
-            PlayerPrefs.SetInt("currentText", 6);
-            SceneManager.LoadScene(1);
+        { 
+            DOTween.To(() => camera_.GetComponent<Camera>().orthographicSize, x => camera_.GetComponent<Camera>().orthographicSize = x, 1f, 1.5f).SetEase(Ease.InOutCubic).OnComplete(() => cutscene());
         }
+    }
+    void cutscene()
+    {
+            PlayerPrefs.SetInt("currentText", 6);
+            SceneManager.LoadScene(1); 
     }
     public void move()
     {

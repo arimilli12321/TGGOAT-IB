@@ -522,7 +522,23 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cat-wakeup-spritesheet_0: -4662587141404348387
+      cat-wakeup-spritesheet_1: -5560888899554295976
+      cat-wakeup-spritesheet_10: -5428803010756410927
+      cat-wakeup-spritesheet_11: -1230447429271468232
+      cat-wakeup-spritesheet_12: -3173452923712456753
+      cat-wakeup-spritesheet_13: 8550815387059909642
+      cat-wakeup-spritesheet_14: -1930412176634960970
+      cat-wakeup-spritesheet_15: 6420674810828987299
+      cat-wakeup-spritesheet_2: -1485181696138851919
+      cat-wakeup-spritesheet_3: -505960391831603313
+      cat-wakeup-spritesheet_4: 1313396297010079564
+      cat-wakeup-spritesheet_5: -2643908320119154646
+      cat-wakeup-spritesheet_6: 6510552405567648801
+      cat-wakeup-spritesheet_7: -3992061605324053600
+      cat-wakeup-spritesheet_8: 6731273916668030428
+      cat-wakeup-spritesheet_9: 4800031586518878589
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
