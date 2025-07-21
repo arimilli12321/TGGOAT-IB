@@ -109,7 +109,7 @@ public class textScript : MonoBehaviour
                 else if (texts[currentText + 1].Equals("5"))
                 {
                     textBox.SetActive(false);
-                    background.transform.DOScale(new Vector3(0.8f, 0.8f, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
+                    background.transform.DOScale(new Vector3(0.6f, 0.6f, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
                     {
                         SceneManager.LoadScene(6);
                     });

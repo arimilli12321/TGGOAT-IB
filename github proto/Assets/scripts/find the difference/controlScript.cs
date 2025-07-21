@@ -20,7 +20,6 @@ public class controlScript : MonoBehaviour
 
     void Start()
     {
-        DOTween.SetTweensCapacity(5000, 5000);
         camera_.GetComponent<Camera>().orthographicSize = 1;
         DOTween.To(() => camera_.GetComponent<Camera>().orthographicSize, x => camera_.GetComponent<Camera>().orthographicSize = x, 20f, 1.5f).SetEase(Ease.InOutCubic);
         soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<soundManagerScript>();
@@ -45,17 +44,15 @@ public class controlScript : MonoBehaviour
             moving = true;
             zoomed = false;
         }
-        if (score == 10)
-        {
-            if (camera_.GetComponent<Camera>().orthographicSize == 20)
-            DOTween.To(() => camera_.GetComponent<Camera>().orthographicSize, x => camera_.GetComponent<Camera>().orthographicSize = x, 1f, 1f).SetEase(Ease.InOutCubic).OnComplete(() => cutscene());
+        if (score == 10) 
+        { 
+            DOTween.To(() => camera_.GetComponent<Camera>().orthographicSize, x => camera_.GetComponent<Camera>().orthographicSize = x, 1f, 1.5f).SetEase(Ease.InOutCubic).OnComplete(() => cutscene());
         }
     }
     void cutscene()
     {
-        PlayerPrefs.SetInt("currentText", 6);
-        PlayerPrefs.SetFloat("cutsceneCamSize", 0.5f);
-        SceneManager.LoadScene(1); 
+            PlayerPrefs.SetInt("currentText", 6);
+            SceneManager.LoadScene(1); 
     }
     public void move()
     {
