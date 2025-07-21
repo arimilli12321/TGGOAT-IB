@@ -45,7 +45,7 @@ public class controlScript : MonoBehaviour
             moving = true;
             zoomed = false;
         }
-        if (score == 1)
+        if (score == 10)
         {
             if (camera_.GetComponent<Camera>().orthographicSize == 20)
             DOTween.To(() => camera_.GetComponent<Camera>().orthographicSize, x => camera_.GetComponent<Camera>().orthographicSize = x, 1f, 1f).SetEase(Ease.InOutCubic).OnComplete(() => cutscene());
