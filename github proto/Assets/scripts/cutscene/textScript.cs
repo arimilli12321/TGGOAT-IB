@@ -94,6 +94,7 @@ public class textScript : MonoBehaviour
                     textBox.SetActive(false);
                     background.transform.DOScale(new Vector3(1, 1, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
                     {
+                        cam.backgroundColor = Color.white;
                         SceneManager.LoadScene(5);
                     });
                 }
