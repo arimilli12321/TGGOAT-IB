@@ -74,7 +74,7 @@ public class textScript : MonoBehaviour
                 changeText(texts[currentText]);
                 if (texts[currentText + 1] == "1")
                 {
-                    Debug.Log("done"); 
+                    Debug.Log("done");
                     textBox.SetActive(false);
                     background.transform.DOScale(new Vector3(2f, 2f, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
                     {
@@ -87,7 +87,7 @@ public class textScript : MonoBehaviour
                     background.transform.DOScale(new Vector3(4, 4, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
                     {
                         SceneManager.LoadScene(3);
-                    });            
+                    });
                 }
                 else if (texts[currentText + 1].Equals("3"))
                 {
@@ -95,7 +95,7 @@ public class textScript : MonoBehaviour
                     background.transform.DOScale(new Vector3(1, 1, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
                     {
                         SceneManager.LoadScene(5);
-                    });             
+                    });
                 }
                 else if (texts[currentText + 1].Equals("4"))
                 {
@@ -103,6 +103,14 @@ public class textScript : MonoBehaviour
                     background.transform.DOScale(new Vector3(0.8f, 0.8f, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
                     {
                         SceneManager.LoadScene(4);
+                    });
+                } 
+                else if (texts[currentText + 1].Equals("5"))
+                {
+                    textBox.SetActive(false);
+                    background.transform.DOScale(new Vector3(0.8f, 0.8f, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
+                    {
+                        SceneManager.LoadScene(6);
                     });
                 } 
             }
