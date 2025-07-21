@@ -124,6 +124,11 @@ public class BallControl : MonoBehaviour
 
     private void win()
     {
+        tutorialText.text = " ";
+        shotsText.text = " ";
+        transform.Find("power 1").gameObject.SetActive(false);
+        transform.Find("power 2").gameObject.SetActive(false);
+        transform.Find("power 3").gameObject.SetActive(false);
         DOTween.To(() => camera_.GetComponent<Camera>().orthographicSize, x => camera_.GetComponent<Camera>().orthographicSize = x, 20f, 1.5f).SetEase(Ease.InOutCubic)
         .OnComplete(() => loadCutscene());
     }

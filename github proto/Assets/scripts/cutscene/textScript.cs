@@ -18,6 +18,7 @@ public class textScript : MonoBehaviour
     private char character;
     [SerializeField] private GameObject textBox, background;
     private GameObject soundManager;
+    public float timer = 0;
 
     void Update()
     {
@@ -26,11 +27,12 @@ public class textScript : MonoBehaviour
             text.color = Color.orange;
             text.outlineWidth = 0.15f;
         }
-            else if (currentText == 6) {
-            DOTween.To(() => cam.GetComponent<Camera>().orthographicSize, x => cam.GetComponent<Camera>().orthographicSize = x, 20f, 1.5f).SetEase(Ease.InOutCubic);
+        else if (currentText == 6)
+        {
             cam.GetComponent<Camera>().backgroundColor = new Color(0.227451f, 0.7803922f, 0.6156863f);
         }
-            else if (currentText == 10) {
+        else if (currentText == 10)
+        {
             cam.GetComponent<Camera>().backgroundColor = new Color(0.1607843f, 0.227451f, 0.3568628f);
         }
         else
@@ -38,13 +40,27 @@ public class textScript : MonoBehaviour
             text.color = Color.black;
             text.outlineWidth = 0;
         }
+        if (timer > 0) timer -= Time.deltaTime;
+        else if (timer != -1)
+        {
+            timer = -1;
+            changeText(texts[currentText]);
+        }
+        
     }
     void Start()
     {
         soundManager = GameObject.FindGameObjectWithTag("soundManager");
+        if (PlayerPrefs.GetFloat("cutsceneCamSize") != 0)
+        {
+            cam.GetComponent<Camera>().orthographicSize = PlayerPrefs.GetFloat("cutsceneCamSize");
+            PlayerPrefs.SetFloat("cutsceneCamSize", 0);
+            timer = 1f;
+            DOTween.To(() => cam.GetComponent<Camera>().orthographicSize, x => cam.GetComponent<Camera>().orthographicSize = x, 5f, 1f).SetEase(Ease.InOutCubic);
+
+        }
         soundManager.GetComponent<soundManagerScript>().playMusicClip(1);
         currentText = PlayerPrefs.GetInt("currentText");
-        changeText(texts[currentText]);
     }
 
     void OnMouseOver()
@@ -60,7 +76,7 @@ public class textScript : MonoBehaviour
                 {
                     Debug.Log("done"); 
                     textBox.SetActive(false);
-                    background.transform.DOScale(new Vector3(1, 1, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
+                    background.transform.DOScale(new Vector3(2f, 2f, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
                     {
                         SceneManager.LoadScene(2);
                     });
@@ -76,7 +92,7 @@ public class textScript : MonoBehaviour
                 else if (texts[currentText + 1].Equals("3"))
                 {
                     textBox.SetActive(false);
-                    background.transform.DOScale(new Vector3(4, 4, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
+                    background.transform.DOScale(new Vector3(1, 1, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
                     {
                         SceneManager.LoadScene(5);
                     });             
@@ -84,7 +100,7 @@ public class textScript : MonoBehaviour
                 else if (texts[currentText + 1].Equals("4"))
                 {
                     textBox.SetActive(false);
-                    background.transform.DOScale(new Vector3(4, 4, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
+                    background.transform.DOScale(new Vector3(0.8f, 0.8f, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
                     {
                         SceneManager.LoadScene(4);
                     });

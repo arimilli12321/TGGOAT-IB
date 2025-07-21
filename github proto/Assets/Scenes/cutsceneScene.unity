@@ -635,7 +635,7 @@ MonoBehaviour:
   - Uh oh... the computer isnt turning on, and my motherboad is missing!
   - 'Goal: repair the motherboard by finding pieces and putting them in place.'
   - 
-  - 1
+  - 2
   - Alright, now that thats done...
   - wait... A VIRUS?!?
   - 
@@ -653,6 +653,7 @@ MonoBehaviour:
   currentText: 0
   textBox: {fileID: 1867499474}
   background: {fileID: 215380606}
+  timer: 0
 --- !u!4 &1499222707
 Transform:
   m_ObjectHideFlags: 0
