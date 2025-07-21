@@ -78,7 +78,7 @@ public class textScript : MonoBehaviour
                     textBox.SetActive(false);
                     background.transform.DOScale(new Vector3(4, 4, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
                     {
-                        SceneManager.LoadScene(4);
+                        SceneManager.LoadScene(5);
                     });             
                 }
                 else if (texts[currentText + 1].Equals("4"))
@@ -86,7 +86,7 @@ public class textScript : MonoBehaviour
                     textBox.SetActive(false);
                     background.transform.DOScale(new Vector3(4, 4, 1), 1f).SetEase(Ease.InOutCubic).OnComplete(() =>
                     {
-                        SceneManager.LoadScene(5);
+                        SceneManager.LoadScene(4);
                     });
                 }
             }
