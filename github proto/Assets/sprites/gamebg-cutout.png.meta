@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      gamebg-cutout_0: 6748650116338697129
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
