@@ -7,15 +7,19 @@ public class creditScript : MonoBehaviour
 {
     [SerializeField] List<GameObject> credits = new List<GameObject>();
     int currentCredit = -1;
+    private soundManagerScript soundManager;
 
     void Start()
     {
+        soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<soundManagerScript>();
+        while (soundManager == null) {}
+        soundManager.playMusicClip(1);
         moveIn();
     }
 
     private IEnumerator moveOut(Transform t) {
         yield return new WaitForSeconds(5f);
-        t.DOMoveX(-600, 1).OnComplete(() => moveIn());
+        t.DOMoveX(-800, 1).OnComplete(() => moveIn());
     }
 
     private void moveIn() {
