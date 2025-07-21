@@ -28,7 +28,7 @@ public class wrongWordsScript : MonoBehaviour
         }
     }
     private void getOut() {
-        PlayerPrefs.SetInt("currentText", 12);
+        PlayerPrefs.SetInt("currentText", 15);
         SceneManager.LoadScene(1);
     }
 }
