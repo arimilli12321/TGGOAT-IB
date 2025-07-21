@@ -4,7 +4,7 @@ public class powerScript : MonoBehaviour
 {
     [SerializeField] private float power;
     [SerializeField] private GameObject ball;
-    private float timer = 0;
+    public float timer = 0;
     private bool clicked = false;
     private soundManagerScript soundManager;
 

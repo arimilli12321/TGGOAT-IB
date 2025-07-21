@@ -2916,6 +2916,7 @@ MonoBehaviour:
   tutorialText: {fileID: 1717645695}
   loseUI: {fileID: 0}
   winUi: {fileID: 0}
+  camera_: {fileID: 1197639080}
 --- !u!1 &1083398954
 GameObject:
   m_ObjectHideFlags: 0
