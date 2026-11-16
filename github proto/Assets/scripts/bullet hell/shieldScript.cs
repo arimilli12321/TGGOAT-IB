@@ -32,8 +32,7 @@ public class shieldScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag("enemy") && regenerateCooldown == 0)
-        {
+        if (collider.gameObject.CompareTag("enemy") && regenerateCooldown == 0) {
             Destroy(collider.gameObject);
             regenerateCooldown = 2.5f;
             player.GetComponent<playerScript>().sliderValue += 1;
@@ -47,6 +46,15 @@ public class shieldScript : MonoBehaviour
                 spawnerScript.enabled = false;
                 DOTween.To(() => cam.GetComponent<Camera>().orthographicSize, x => cam.GetComponent<Camera>().orthographicSize = x, 1f, 1.5f).SetEase(Ease.InOutCubic).OnComplete(() => nextscene());
             }
+            transform.Find("sprite").GetComponent<SpriteRenderer>().enabled = false;
+            disabledSprite.gameObject.SetActive(true);
+        }
+
+
+        if (collider.gameObject.CompareTag("attack") && regenerateCooldown == 0) {
+            Destroy(collider.gameObject);
+            regenerateCooldown = 2.5f;
+            soundManager.playSfxClip(7);
             transform.Find("sprite").GetComponent<SpriteRenderer>().enabled = false;
             disabledSprite.gameObject.SetActive(true);
         }
